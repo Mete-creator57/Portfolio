@@ -1,0 +1,30 @@
+\# My C# Learning Portfolio
+
+
+
+This repository contains all the exercises and projects I am completing while studying C# from "The C# Player's Guide".
+
+
+
+\## Structure
+
+
+
+Each chapter's exercises are located in their own dedicated folder.
+
+
+
+\- \*\*Chapter 10:\*\* Arrays and Loops
+
+
+
+\## Technologies Used
+
+\- C#
+
+\- .NET
+
+\- Visual Studio
+
+\- Git \& GitHub
+
