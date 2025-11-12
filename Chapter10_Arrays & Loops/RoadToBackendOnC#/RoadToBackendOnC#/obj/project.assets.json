@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\OneDrive\\Рабочий стол\\MyC#Journey\\Portfolio\\Chapter10_Arrays & Loops\\RoadToBackendOnC#\\RoadToBackendOnC#\\RoadToBackendOnC#.csproj",
-      "projectName": "RoadToBackendOnC#",
-      "projectPath": "C:\\Users\\user\\OneDrive\\Рабочий стол\\MyC#Journey\\Portfolio\\Chapter10_Arrays & Loops\\RoadToBackendOnC#\\RoadToBackendOnC#\\RoadToBackendOnC#.csproj",
+      "projectUniqueName": "C:\\dev\\MyC#Journey\\Portfolio\\Chapter10_Arrays & Loops\\RoadToBackendOnC#\\RoadToBackendOnC#\\Chapter10_vsfile.csproj",
+      "projectName": "Chapter10_vsfile",
+      "projectPath": "C:\\dev\\MyC#Journey\\Portfolio\\Chapter10_Arrays & Loops\\RoadToBackendOnC#\\RoadToBackendOnC#\\Chapter10_vsfile.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\OneDrive\\Рабочий стол\\MyC#Journey\\Portfolio\\Chapter10_Arrays & Loops\\RoadToBackendOnC#\\RoadToBackendOnC#\\obj\\",
+      "outputPath": "C:\\dev\\MyC#Journey\\Portfolio\\Chapter10_Arrays & Loops\\RoadToBackendOnC#\\RoadToBackendOnC#\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

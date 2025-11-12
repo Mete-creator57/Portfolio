@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\MyC#Journey\\Portfolio\\Chapter10_Arrays & Loops\\RoadToBackendOnC#\\RoadToBackendOnC#\\RoadToBackendOnC#.csproj": {}
+    "C:\\dev\\MyC#Journey\\Portfolio\\Chapter10_Arrays & Loops\\RoadToBackendOnC#\\RoadToBackendOnC#\\Chapter10_vsfile.csproj": {}
   },
   "projects": {
-    "C:\\dev\\MyC#Journey\\Portfolio\\Chapter10_Arrays & Loops\\RoadToBackendOnC#\\RoadToBackendOnC#\\RoadToBackendOnC#.csproj": {
+    "C:\\dev\\MyC#Journey\\Portfolio\\Chapter10_Arrays & Loops\\RoadToBackendOnC#\\RoadToBackendOnC#\\Chapter10_vsfile.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\MyC#Journey\\Portfolio\\Chapter10_Arrays & Loops\\RoadToBackendOnC#\\RoadToBackendOnC#\\RoadToBackendOnC#.csproj",
-        "projectName": "RoadToBackendOnC#",
-        "projectPath": "C:\\dev\\MyC#Journey\\Portfolio\\Chapter10_Arrays & Loops\\RoadToBackendOnC#\\RoadToBackendOnC#\\RoadToBackendOnC#.csproj",
+        "projectUniqueName": "C:\\dev\\MyC#Journey\\Portfolio\\Chapter10_Arrays & Loops\\RoadToBackendOnC#\\RoadToBackendOnC#\\Chapter10_vsfile.csproj",
+        "projectName": "Chapter10_vsfile",
+        "projectPath": "C:\\dev\\MyC#Journey\\Portfolio\\Chapter10_Arrays & Loops\\RoadToBackendOnC#\\RoadToBackendOnC#\\Chapter10_vsfile.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
         "outputPath": "C:\\dev\\MyC#Journey\\Portfolio\\Chapter10_Arrays & Loops\\RoadToBackendOnC#\\RoadToBackendOnC#\\obj\\",
         "projectStyle": "PackageReference",
