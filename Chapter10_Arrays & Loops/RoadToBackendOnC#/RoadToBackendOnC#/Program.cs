@@ -102,3 +102,26 @@ Console.WriteLine(array5[2][3]); // prints 689
 // length while inner arrays in multidimensional arrays must have the same amount of values they can store
 
 
+// multi-dimensional arrays (just practicing)
+byte[,] mdArray = new byte[4, 2] { { 3, 4 }, { 67, 55 }, { 55, 56 }, { 77, 8 } }; // using byte
+Console.WriteLine(mdArray[3, 0]); // prints 77
+
+// loop through all elements in a multi-dimensional array
+int[,] exampleArray = new int[3, 3] { { 67, 68, 69 }, { 77, 78, 79 }, { 99, 100, 101} };
+// its like
+// 67 68 69 --> 1st row,"
+// 77 78 79 --> 2nd row, "
+// 99 100 101 --> 3rd row, 3 columns
+
+for(int row = 0; row < exampleArray.GetLength(0); row++) // starts from 0, thus from exampleArray[0]
+{
+    for(int column = 0; column < exampleArray.GetLength(1); column++) // starts from 0, e.g. exampleArray[0, 0], exampleArray[0, 1]...
+    {
+        Console.Write(exampleArray[row, column] + ", " ); // e.g. exampleArray[0, 2] which is 69 so 69,...
+    }
+    Console.WriteLine();
+}
+// GetLength(dimension) is a method for
+// multi-dimensional arrays that returns the number
+// of elements in a specific dimension,
+// where 0 is for rows and 1 is for columns.
