@@ -89,3 +89,16 @@ Console.WriteLine($"Second spot, 1st number { anotherArray[1, 0] }"); // prints 
 Console.WriteLine(anotherArray[0, 0]); // prints 67
 // multi-dimensional arrays are easier to read than jagged arrays are
 
+// EACH INNER ARRAY can have a DIFFRENT LENGTH while using a jagged array
+int[][] array5 = new int[3][];
+array5[0] = new int[2] { 5, 10 }; // this array holds 2 integers
+array5[1] = new int[4] { 5, 10, 12, 14 }; // this one holds 4 integers
+array5[2] = new int[] { 5, 67, 68, 689 }; // this one holds 4 integers too but without mentioning its size
+
+Console.WriteLine(array5[0][1]); // prints 10
+Console.WriteLine(array5[2][3]); // prints 689
+
+// the case is that each inner array created in an array can have a different 
+// length while inner arrays in multidimensional arrays must have the same amount of values they can store
+
+
