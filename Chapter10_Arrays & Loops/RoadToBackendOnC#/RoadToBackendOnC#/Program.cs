@@ -1,6 +1,8 @@
 ﻿
 // console window title
 Console.Title = "Arrays and Loops";
+// note: you start counting from 0, not from 1
+
 
 // "The Laws of Freach" exercise
 // --- CALCULATING A MINIMUM VALUE IN AN ARRAY using "for" loop  ---
@@ -62,14 +64,28 @@ Console.WriteLine($"The average value is {averageValue} using \"foreach\" loop")
 
 // Jagged arrays
 
-int[][] matrix = new int[3][]; //  first [] in new int [] shows how many spots array can hold like a bookshelf
+int[][] matrix = new int[3][]; //  first [] in new int [] shows how many spots the array can hold, like a bookshelf
                                
 matrix[0] = new int[] { 67, 69 }; // first shelf holds books which are 67 and 69
-matrix[1] = new int[] { 1, 2, 4 };  // second shelf holds books which are 1 and 2
+matrix[1] = new int[] { 1, 2, 4 };  // second shelf holds books which are 1, 2 and 4
 matrix[2] = new int[] { 4, 100 };
-Console.WriteLine($"First spot, second number: {matrix[0][1]}"); // how do I access to the first book on the second shelf?
-                                                           // first shelf, second book which prints 69
+
+// index [0] is the first spot, index[1] is the second number in the array
+Console.WriteLine($"First spot, second number: {matrix[0][1]}, using jagged arrays"); // prints 69
 
 Console.WriteLine($"Second spot, third number: {matrix[1][2]}"); // prints 4
 Console.WriteLine(matrix[2][1]); // prints 100
+
+// Multi - Dimensional Arrays (Rectangular arrays)
+int[,] theArray = new int[3, 3] { { 67, 60, 66 }, { 41, 44, 45 }, { 5555, 44, 67 } };
+Console.WriteLine($"Third spot, 2nd number: { theArray[2, 1] }");
+
+// [,] means that its a multi dimensional array, new int[..., ...] mean spots
+// e.g [3,5] --> 3 spots , each holds 5 values in it
+
+// more examples of multi dimensional arrays
+int[,] anotherArray = new int[2, 2] { { 67, 60, }, { 41, 44 } };
+Console.WriteLine($"Second spot, 1st number { anotherArray[1, 0] }"); // prints 41
+Console.WriteLine(anotherArray[0, 0]); // prints 67
+// multi-dimensional arrays are easier to read than jagged arrays are
 
