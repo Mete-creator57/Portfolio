@@ -1,7 +1,8 @@
 ﻿
 // console window title
-Console.Title = "The Laws of Freach";
+Console.Title = "Arrays and Loops";
 
+// "The Laws of Freach" exercise
 // --- CALCULATING A MINIMUM VALUE IN AN ARRAY using "for" loop  ---
 
 
@@ -58,4 +59,17 @@ foreach (float Anumber in array3)
 }
 float averageValue = total / array3.Length; // dividing the sum of all numbers by the amount of all items in an array
 Console.WriteLine($"The average value is {averageValue} using \"foreach\" loop");
+
+// Jagged arrays
+
+int[][] matrix = new int[3][]; //  first [] in new int [] shows how many spots array can hold like a bookshelf
+                               
+matrix[0] = new int[] { 67, 69 }; // first shelf holds books which are 67 and 69
+matrix[1] = new int[] { 1, 2, 4 };  // second shelf holds books which are 1 and 2
+matrix[2] = new int[] { 4, 100 };
+Console.WriteLine($"First spot, second number: {matrix[0][1]}"); // how do I access to the first book on the second shelf?
+                                                           // first shelf, second book which prints 69
+
+Console.WriteLine($"Second spot, third number: {matrix[1][2]}"); // prints 4
+Console.WriteLine(matrix[2][1]); // prints 100
 
