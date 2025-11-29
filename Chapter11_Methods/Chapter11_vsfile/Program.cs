@@ -50,5 +50,22 @@ string userInput = Console.ReadLine();
      // this method gets the value of the variable from the main method,
      // which causes dependence on the variable (userInput)
 }
+DisplayText();
 
-DisplayText(); // calling the method
+Console.WriteLine("Press any key to continue working");
+Console.ReadKey(true);
+
+
+// ---- PASSING DATA TO A METHOD and USING PARAMETRES ----
+
+Count(5); // calling the method and defining value inside parentheses to initilize the parameter
+          // (litterally assigning value to the parameter which is "int numberToCountTo"
+void Count(int numberToCountTo) // defining method with the parameter in it
+{
+    for (int currentNum = 1; currentNum <= numberToCountTo; currentNum++) // starts from 1, goes till 5(numberToCountTo) 
+                                                                          // its the number that we have initilized in parentheses
+                                                                          // as a parameter
+    {
+        Console.WriteLine(currentNum);
+    }
+}
