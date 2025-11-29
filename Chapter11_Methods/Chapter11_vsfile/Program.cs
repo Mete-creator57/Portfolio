@@ -14,7 +14,8 @@ else
 {
     Console.WriteLine("You can drive a car!");
 }
-
+Console.WriteLine("Press any key if you want to continue...");
+Console.ReadKey(true); // pressing any key
 
 CountToTen();
 CountToTwenty(); // calling the method
@@ -39,3 +40,15 @@ void CountToTen()
 CountToTwenty(); // this method can be called anywhere since it is a LOCAL FUNCTION
 //  CountToTwenty(); method can be called from anywhere because it lives in our MAIN Method
 
+Console.Write("Write something: ");
+string userInput = Console.ReadLine();
+
+ void DisplayText()
+{
+    Console.WriteLine($"You typed: {userInput}"); // Danger!!
+     // if you accidently change the variable name, this function will be broken because to run the code above
+     // this method gets the value of the variable from the main method,
+     // which causes dependence on the variable (userInput)
+}
+
+DisplayText(); // calling the method
