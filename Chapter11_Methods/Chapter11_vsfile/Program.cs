@@ -56,16 +56,19 @@ Console.WriteLine("Press any key to continue working");
 Console.ReadKey(true);
 
 
-// ---- PASSING DATA TO A METHOD and USING PARAMETRES ----
+// ---- PASSING DATA (arguments) TO A METHOD and USING PARAMETRES ----
 
-Count(5); // calling the method and defining value inside parentheses to initilize the parameter
-          // (litterally assigning value to the parameter which is "int numberToCountTo"
-void Count(int numberToCountTo) // defining method with the parameter in it
+Count(5); // calling the method and passing the argument --> (5) inside parentheses to initilize the parameter
+          // (litterally assigning value to the parameter which is "int numberToCountTo")
+void Count(int numberToCountTo) // defining method with the PARAMETER named "numberToCountTo" in it
 {
-    for (int currentNum = 1; currentNum <= numberToCountTo; currentNum++) // starts from 1, goes till 5(numberToCountTo) 
+    for (int i = 1; i <= numberToCountTo; i++) // starts from 1, goes till 5(numberToCountTo) 
                                                                           // its the number that we have initilized in parentheses
-                                                                          // as a parameter
+                                                                          // as an argument (5) , so basically this loop gets repeated 5 times
+                                                                          // (printing currentNum e.g 1, 2, 3...)
+                                                                          // due to the number --> (5) which is an argument that defines an amount of repetitions
     {
-        Console.WriteLine(currentNum);
+        Console.WriteLine(i);
     }
 }
+
