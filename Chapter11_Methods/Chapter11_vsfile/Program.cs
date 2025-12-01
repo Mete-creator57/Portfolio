@@ -85,3 +85,45 @@ void CountBetween(int start, int end) // multiple parameters inside the parenthe
         Console.WriteLine($"This is {currentNum}"); // 30, 31....50
     }
 }
+Console.WriteLine("Press any key to continue");
+Console.ReadKey(true);
+
+//--- RETURNING A VALUE FROM A METHOD ---
+// (void method doesn't return anything you can assign to a variable)
+
+Console.WriteLine("How high should I count?"); // asking user
+Console.Write("Your response = ");
+int chosenNumber = ReadNumber();
+Count(chosenNumber); // this is the method which we've created
+                     // that counts as many times as user wants (e.g. 5)
+
+int ReadNumber()
+{
+    string userResponse = Console.ReadLine();
+    int number = int.Parse(userResponse);
+    return number;
+}
+Console.WriteLine("Press any key to continue");
+Console.ReadKey(true);
+
+// more practice...
+Console.WriteLine("Do you like Visual Studio?");
+string userAnswer = Console.ReadLine();
+
+if(userAnswer == "yes")
+{
+    string baz = SomeText(); 
+    Console.WriteLine(baz); // or you could have done like this: Console.WriteLine(SomeText());
+}
+else
+{
+    Console.WriteLine(SomeText());
+}
+
+    string SomeText() // RETURNS string
+    {
+        string message = "Okay, got it"; 
+        return message; // returned the string, now you can assign it to other variables
+                        // e.g. string foobar = SomeText(); ---> now, if you use the variable "foobar"
+                        // it will print "okay, got it" to the console
+    }
