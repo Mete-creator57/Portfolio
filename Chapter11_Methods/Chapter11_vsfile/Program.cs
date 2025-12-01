@@ -33,7 +33,8 @@ void CountToTen()
 {
     for(int current = 1; current <= 10; current++)
     {
-        Console.WriteLine(current); // both methods and a variable use the same variable name with no error!!
+        Console.WriteLine(current); // both methods and the variable use the same name (current)
+                                    // with no error!!
     }
 }
 
@@ -56,7 +57,7 @@ Console.WriteLine("Press any key to continue working");
 Console.ReadKey(true);
 
 
-// ---- PASSING DATA (arguments) TO A METHOD and USING PARAMETRES ----
+// ---- PASSING DATA (arguments) TO A METHOD and USING PARAMETERS ----
 
 Count(5); // calling the method and passing the argument --> (5) inside parentheses to initilize the parameter
           // (litterally assigning value to the parameter which is "int numberToCountTo")
@@ -72,3 +73,15 @@ void Count(int numberToCountTo) // defining method with the PARAMETER named "num
     }
 }
 
+// multiple parameters
+int foo = 10; 
+int bar = 30;
+CountBetween(foo, bar); // copied the value from "foo" and "bar" and to the method
+                        // and set up these as arguments
+void CountBetween(int start, int end) // multiple parameters inside the parentheses
+{
+    for(int currentNum = start; currentNum <= end; currentNum++)
+    {
+        Console.WriteLine($"This is {currentNum}"); // 30, 31....50
+    }
+}
