@@ -75,7 +75,7 @@ void Count(int numberToCountTo) // defining method with the PARAMETER named "num
 
 // multiple parameters
 int foo = 10; 
-int bar = 30;
+int bar = 30; // 10 --- 30
 CountBetween(foo, bar); // copied the value from "foo" and "bar" and to the method
                         // and set up these as arguments
 void CountBetween(int start, int end) // multiple parameters inside the parentheses
@@ -117,7 +117,7 @@ if(userAnswer == "yes")
 }
 else
 {
-    Console.WriteLine(SomeText());
+    Console.WriteLine(SomeText()); // prints "Okay, got it"
 }
 
     string SomeText() // RETURNS string
@@ -127,3 +127,70 @@ else
                         // e.g. string foobar = SomeText(); ---> now, if you use the variable "foobar"
                         // it will print "okay, got it" to the console
     }
+Console.WriteLine("Press anything to continue");
+Console.ReadKey(true);
+
+Console.Clear();
+
+// --- RETURNING EARLY ---
+
+Console.Write("Type your name here: "); 
+string name = GetUserName();
+Console.WriteLine($"Your name is {name}, right?");
+
+string GetUserName()
+{
+    while (true)
+    {
+        string usersName = Console.ReadLine();
+        if(usersName != "") // if user typed something, basically if a thing that "usersName" variable holds 
+                            // is not empty,
+        {
+            return usersName; // then return the value that "usersName" variable holds
+        }
+        Console.WriteLine("Please, try again"); // if user keeps not typing then this question will be asked for ever 
+                                                // since it's while(true) loop
+    }
+}
+// using void method
+Console.Write("Type a number to count to: ");
+int number = int.Parse(Console.ReadLine()); // converting userInput (string) to int
+CountTill(number); // defining a number that user selected as an argument
+
+void CountTill(int numberToCountTo)
+{
+    if (numberToCountTo < 1)
+        return; // in this case, return doesn't return anything since it's a void method, 
+                // just stops doing this method and exits
+    else
+    {
+        for(int a = 1; a <= numberToCountTo; a++)
+        {
+            Console.WriteLine($"This is {a} number");
+        }
+    }
+}
+
+// more practice using void and return...
+Console.WriteLine("Choose numbers to count numbers in between");
+Console.Write("Select your 1st number: ");
+int usersAnswer1 = int.Parse(Console.ReadLine());
+Console.Write("Select your 2nd number: ");
+int usersAnswer2 = int.Parse(Console.ReadLine());
+
+InBetween(usersAnswer1, usersAnswer2); // assigning user's answers to the variables "beggining" 
+                                       // and "end"
+
+void InBetween(int beggining, int end)
+{
+    if(beggining == 0 || end == 0) // if 1st or 2nd number is 0
+    {
+        Console.WriteLine("Sorry, one of your numbers is 0, restart the programm and select again");
+        return; // ends the method
+    }
+    for(int currentNum = beggining; currentNum <= end; currentNum++) // currentNum = 20; 20 <= 30; 20++
+    {
+        Console.WriteLine(currentNum); // prints numbers in between
+    }
+}
+
