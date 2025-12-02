@@ -1,0 +1,30 @@
+name: .NET Build and Test
+
+on:
+  push:
+    branches: [ "main" ] # Trigger: Runs when you push code to the 'main' branch
+  pull_request:
+    branches: [ "main" ] # Trigger: Runs when someone opens a Pull Request
+
+jobs:
+  build:
+    name: Build on Linux
+    runs-on: ubuntu-latest # Environment: Using a virtual Linux machine (fast & free)
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4 # Step 1: The robot downloads code from the repo
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4 # Step 2: Installs the .NET SDK tools
+      with:
+        dotnet-version: 8.0.x # Version: Change this if your project uses .NET 6 or 7
+
+    - name: Restore Dependencies
+      run: dotnet restore # Step 3: Downloads external libraries (NuGet packages)
+
+    - name: Build
+      run: dotnet build --no-restore # Step 4: The 'Assembly' process. If syntax is wrong -> Red Cross ❌
+
+    - name: Test
+      run: dotnet test --no-build --verbosity normal # Step 5: Runs automated tests (if you wrote any)
