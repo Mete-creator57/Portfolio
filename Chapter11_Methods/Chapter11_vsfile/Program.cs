@@ -140,15 +140,15 @@ Console.WriteLine($"Your name is {name}, right?");
 
 string GetUserName()
 {
-    while (true)
+    while (true) // never ends
     {
         string usersName = Console.ReadLine();
         if(usersName != "") // if user typed something, basically if a thing that "usersName" variable holds 
                             // is not empty,
         {
-            return usersName; // then return the value that "usersName" variable holds
+            return usersName; // then return the value that "usersName" variable holds and end the method
         }
-        Console.WriteLine("Please, try again"); // if user keeps not typing then this question will be asked for ever 
+        Console.WriteLine("Please, try again"); // if user keeps not typing, then this question will be asked for ever 
                                                 // since it's while(true) loop
     }
 }
@@ -159,7 +159,7 @@ CountTill(number); // defining a number that user selected as an argument
 
 void CountTill(int numberToCountTo)
 {
-    if (numberToCountTo < 1)
+    if (numberToCountTo < 1) // if an argument is less than 1
         return; // in this case, return doesn't return anything since it's a void method, 
                 // just stops doing this method and exits
     else
@@ -180,7 +180,7 @@ int usersAnswer2 = int.Parse(Console.ReadLine());
 
 InBetween(usersAnswer1, usersAnswer2); // assigning user's answers to the variables "beggining" 
                                        // and "end"
-
+                                       // so basicly, usersAnswer1 = beggining, usersAnswer2 = end
 void InBetween(int beggining, int end)
 {
     if(beggining == 0 || end == 0) // if 1st or 2nd number is 0
@@ -188,9 +188,14 @@ void InBetween(int beggining, int end)
         Console.WriteLine("Sorry, one of your numbers is 0, restart the programm and select again");
         return; // ends the method
     }
-    for(int currentNum = beggining; currentNum <= end; currentNum++) // currentNum = 20; 20 <= 30; 20++
+    else if(beggining == end)
     {
-        Console.WriteLine(currentNum); // prints numbers in between
+        Console.WriteLine("How can I count in between if you selected the same number?");
+        return; // ends the method
     }
+        for (int currentNum = beggining; currentNum <= end; currentNum++) // currentNum = 20; 20 <= 30; 20++
+        {
+            Console.WriteLine(currentNum); // prints numbers in between
+        }
 }
 
