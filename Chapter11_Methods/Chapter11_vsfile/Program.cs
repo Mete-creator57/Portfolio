@@ -56,6 +56,8 @@ DisplayText();
 Console.WriteLine("Press any key to continue working");
 Console.ReadKey(true);
 
+Console.Clear();
+
 
 // ---- PASSING DATA (arguments) TO A METHOD and USING PARAMETERS ----
 
@@ -87,6 +89,8 @@ void CountBetween(int start, int end) // multiple parameters inside the parenthe
 }
 Console.WriteLine("Press any key to continue");
 Console.ReadKey(true);
+
+Console.Clear();
 
 //--- RETURNING A VALUE FROM A METHOD ---
 // (void method doesn't return anything you can assign to a variable)
@@ -155,7 +159,7 @@ string GetUserName()
 // using void method
 Console.Write("Type a number to count to: ");
 int number = int.Parse(Console.ReadLine()); // converting userInput (string) to int
-CountTill(number); // defining a number that user selected as an argument
+CountTill(number); // defining a number that user selected as an argument, basically "number" = "numberToCountTo"
 
 void CountTill(int numberToCountTo)
 {
@@ -190,7 +194,7 @@ void InBetween(int beggining, int end)
     }
     else if(beggining == end)
     {
-        Console.WriteLine("How can I count in between if you selected the same number?");
+        Console.WriteLine("How can I count in between if you selected the same number? Restart the programm");
         return; // ends the method
     }
         for (int currentNum = beggining; currentNum <= end; currentNum++) // currentNum = 20; 20 <= 30; 20++
@@ -199,3 +203,35 @@ void InBetween(int beggining, int end)
         }
 }
 
+Console.WriteLine("Press anything to continue");
+Console.ReadKey(true);
+Console.Clear();
+
+// --- METHOD OVERLOADING ---
+
+// you can perform many diffrent tasks such as: printing strings, ints, bool values
+// using the same method name, however since we are in our main method we can't 
+// overload methods for now
+Console.WriteLine("I love coding");  // prints string
+Console.WriteLine(67); // prints number
+Console.WriteLine(); // moves to the next line
+
+// --- Simple Methods with Expressions ---
+
+Console.WriteLine(TripleAndAddThree(4));
+int TripleAndAddThree(int value)
+{
+    value = value * 3 + 3;
+    return value;
+}
+int DoubleAndSubstractOne(int value) => value * 2 - 1; // instead of using curly braces, we could have done like this
+Console.WriteLine(DoubleAndSubstractOne(3));
+
+PrintTwice(69);
+void PrintTwice(int number) 
+{
+    Console.WriteLine(number); // these can't be printed using an expression body
+    Console.WriteLine(number); // because here are 2 actions to perform
+}
+void PrintOnce(string message) => Console.WriteLine(message); // can be printed since it's a single expression(action to do)
+PrintOnce("C# is pretty fast language to work on");
