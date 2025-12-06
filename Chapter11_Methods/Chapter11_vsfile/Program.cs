@@ -50,10 +50,22 @@ string userInput = Console.ReadLine();
      // if you accidently change the variable name, this function will be broken because to run the code above
      // this method gets the value of the variable from the main method,
      // which causes dependence on the variable (userInput)
+     // so in order to fix that problem we should create variables inside methods
 }
 DisplayText();
 
 Console.WriteLine("Press any key to continue working");
+Console.ReadKey(true);
+
+Console.Write("Type anything: ");
+Print();
+void Print()
+{
+    string answer = Console.ReadLine(); // no dependecy on the main method
+    Console.WriteLine($"You typed {answer}");
+}
+
+Console.Write("Press anything to continue: ");
 Console.ReadKey(true);
 
 Console.Clear();
@@ -235,3 +247,64 @@ void PrintTwice(int number)
 }
 void PrintOnce(string message) => Console.WriteLine(message); // can be printed since it's a single expression(action to do)
 PrintOnce("C# is pretty fast language to work on");
+
+// more practice using bool variables
+Console.WriteLine("We accept only people who are named Mete ");
+Console.Write("Type Mete: ");
+if (CheckingName())
+{
+    Console.WriteLine("System access granted");
+}
+
+
+bool CheckingName()
+{
+    string response = Console.ReadLine();
+
+    // bool isMete = true; (if user typed Mete")
+    bool isMete = response == "Mete"; // basically if, response = Mete, then assign it to isMete variable
+    if(isMete) // so literally we save the result of user's input to the variable, if user typed "Alex" 
+               // this code wouldn't run
+    {
+        return true; // returning value that "isMete" variable holds and assign it to the method
+                    // now CheckingName() = true
+    }
+    else // if user types anything else instead of "Mete"
+    {
+        while (true) // goes for ever
+        {
+            Console.Write("Type Mete: "); // continue asking untill user types "Mete"
+            string retry = Console.ReadLine();
+            if (retry == "Mete")
+                return true; // now CheckingName() = true
+        }
+    }
+}
+
+Console.WriteLine("Press anything to continue:");
+Console.ReadKey(true);
+
+
+Console.Write("Type whether you're hungry or not using only \"yes\" and \"no\": ");
+string answer1 = Console.ReadLine();
+
+bool isHungry = answer1 == "yes"; // if a value that "answer1" variable holds is "yes" then assign it to "isHungry" (bool variable)
+                                // and make it true. isHungry = true;
+bool isNotHungry = answer1 == "no";
+
+if(isHungry) // if user types "yes"
+{
+    Console.WriteLine("have dinner then!");
+}
+else if(isNotHungry)
+{
+    Console.WriteLine("You are not hungry then");
+}
+else
+{
+    Console.WriteLine("I said you to use only \"yes\" or \"no\"");
+    Console.WriteLine("Restart the programm");
+}
+
+
+// --- XML Documentation Comments ---
