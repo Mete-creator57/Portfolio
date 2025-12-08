@@ -154,6 +154,8 @@ Console.Write("Type your name here: ");
 string name = GetUserName();
 Console.WriteLine($"Your name is {name}, right?");
 
+/// gets user's name and returns it 
+/// using while loop(true) which never ends till user types something in the console
 string GetUserName()
 {
     while (true) // never ends
@@ -248,6 +250,10 @@ void PrintTwice(int number)
 void PrintOnce(string message) => Console.WriteLine(message); // can be printed since it's a single expression(action to do)
 PrintOnce("C# is pretty fast language to work on");
 
+void PrintNumber(int number) => Console.WriteLine(number); // use body expressions if you can represent the whole thing
+                                                           // in a single line
+PrintNumber(67);
+
 // more practice using bool variables
 Console.WriteLine("We accept only people who are named Mete ");
 Console.Write("Type Mete: ");
@@ -262,7 +268,7 @@ bool CheckingName()
     string response = Console.ReadLine();
 
     // bool isMete = true; (if user typed Mete")
-    bool isMete = response == "Mete"; // basically if, response = Mete, then assign it to isMete variable
+    bool isMete = response == "Mete"; // basically if, response = Mete, then assign it to "isMete" variable
     if(isMete) // so literally we save the result of user's input to the variable, if user typed "Alex" 
                // this code wouldn't run
     {
@@ -285,7 +291,7 @@ Console.WriteLine("Press anything to continue:");
 Console.ReadKey(true);
 
 
-Console.Write("Type whether you're hungry or not using only \"yes\" and \"no\": ");
+Console.Write("Type whether you're hungry or not using only \"yes\" or \"no\": ");
 string answer1 = Console.ReadLine();
 
 bool isHungry = answer1 == "yes"; // if a value that "answer1" variable holds is "yes" then assign it to "isHungry" (bool variable)
@@ -303,8 +309,71 @@ else if(isNotHungry)
 else
 {
     Console.WriteLine("I said you to use only \"yes\" or \"no\"");
-    Console.WriteLine("Restart the programm");
+    Console.WriteLine("Restart the programm please");
 }
 
+Console.WriteLine("Type anything to continue");
+Console.ReadKey(true);
 
-// --- XML Documentation Comments ---
+// --- XML Documentation Comments --- (used to describe what a method or something else in code does, suing ///)
+
+/// <summary> 
+/// this method counts to 5 using for loop 
+/// also this method doesn't return anything
+/// since it's a void method, only prints
+/// </summary>
+void CountToFive()
+{
+    for(int i = 1; i <= 5; i++)
+    {
+        Console.WriteLine(i);
+    }
+}
+CountToFive();
+
+// challenge
+int height = AskForNumber("What is your height? (type in cm, only numbers) "); //  saving result of the method (assigning it to a variable)
+Console.WriteLine($"You are {height}cm tall!");
+
+/// <summarry>
+/// first asking user for a number, then converting user's answer to int (string --> int)
+/// finally, returning the number
+/// </summarry>
+int AskForNumber(string question)
+{
+    Console.WriteLine(question); //  printing the question, if we didn't write this line our programm wouldn't ask the question
+
+    string usersResponse = Console.ReadLine();
+    int number = int.Parse(usersResponse);
+    return number;
+}
+
+AskForNumberInRange("Select a number you want to type in range: ", 60, 70);
+
+/// <summary>
+/// first giving instructions to user, then printing the sentence
+/// then using while(true) loop which will never end
+/// next, converting user's input to an int 
+/// next, checking if user's number is in the range
+/// if it is, returning user's input and exit the method
+/// else, ask user to choose another number again
+/// </summary>
+int AskForNumberInRange(string sentence, int min, int max)
+{
+    Console.WriteLine("Your number will be returned only if it's in the range"); // giving instructions
+    Console.WriteLine(sentence); // this is the crucial point to print the sentence, if we didn't
+    // write this code parameter(string sentence) would be useless
+
+    while (true)
+    {
+      int selectedNumber = int.Parse(Console.ReadLine());
+
+        if (selectedNumber >= min && selectedNumber <= max)
+        {
+            Console.WriteLine($"Your number in the range! {selectedNumber}");
+            return selectedNumber;
+        }
+        else
+            Console.Write("Select another number: ");
+    }
+}
