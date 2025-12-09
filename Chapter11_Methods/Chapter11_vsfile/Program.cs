@@ -315,7 +315,7 @@ else
 Console.WriteLine("Type anything to continue");
 Console.ReadKey(true);
 
-// --- XML Documentation Comments --- (used to describe what a method or something else in code does, suing ///)
+// --- XML Documentation Comments --- (used to describe what a method or something else in code does, using ///)
 
 /// <summary> 
 /// this method counts to 5 using for loop 
@@ -344,8 +344,8 @@ int AskForNumber(string question)
     Console.WriteLine(question); //  printing the question, if we didn't write this line our programm wouldn't ask the question
 
     string usersResponse = Console.ReadLine();
-    int number = int.Parse(usersResponse);
-    return number;
+    int number = int.Parse(usersResponse); // converting string to an int
+    return number; // return the value, exit method
 }
 
 AskForNumberInRange("Select a number you want to type in range: ", 60, 70);
@@ -361,19 +361,55 @@ AskForNumberInRange("Select a number you want to type in range: ", 60, 70);
 int AskForNumberInRange(string sentence, int min, int max)
 {
     Console.WriteLine("Your number will be returned only if it's in the range"); // giving instructions
-    Console.WriteLine(sentence); // this is the crucial point to print the sentence, if we didn't
+    Console.Write(sentence); // this is the crucial point to print the sentence, if we didn't
     // write this code parameter(string sentence) would be useless
 
     while (true)
     {
-      int selectedNumber = int.Parse(Console.ReadLine());
+      int selectedNumber = int.Parse(Console.ReadLine()); // parsing string to an int
 
         if (selectedNumber >= min && selectedNumber <= max)
         {
             Console.WriteLine($"Your number in the range! {selectedNumber}");
-            return selectedNumber;
+            return selectedNumber; // if this condition is true, return the value and exit the method
         }
         else
             Console.Write("Select another number: ");
     }
+}
+
+// --- The Basics Of Recursion ---
+int Factorial(int number) // creating simple method
+{
+    if (number == 1) // ---> base case, if number gets to 1 ---> method ends and returns 1
+        return 1; // now number = 1
+
+    return number * Factorial(number - 1); // e.g. 6 * (result of the Factorial(5 -1) )
+                                           // compiler doesn't know about the result of Factorial(5)
+                                           // so it skips it and moves to the next by calling the method itself
+}
+Factorial(6);
+
+// challenge
+Console.Write("Select a number: ");
+string input = Console.ReadLine();
+int choosenNum = int.Parse(input);
+
+CountDown(choosenNum);
+/// <summary>
+/// base case ENDS the recursion by using return statement
+/// if code block is our base case, code block below must get closer and closer
+/// with each repetition to our base case
+/// in this case, method calls itself and shrinks by 1
+/// this code will repeat until 0 which is the BASE CASE
+/// rule: everytime you call a method in it's own method, 
+/// it gets restarted and gets repetead until
+/// </summary>
+void CountDown(int number)
+{
+    if (number == 0) // if an argument is 0
+        return; // end this method (stop executing)
+
+    Console.WriteLine(number); // prints the number
+    CountDown(number - 1); // after 15 is printed ---> 15 - 1 = 14 ---> then Console.WriteLine(number) prints 14...
 }
