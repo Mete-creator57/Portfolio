@@ -426,3 +426,20 @@ void CountDown(int number)
     CountDown(number - 1); // after 15 is printed ---> 15 - 1 = 14 ---> then Console.WriteLine(number) prints 14...
                            // it's basically a loop 
 }
+
+// --- Memory Managment ---
+int x = 67; // reserving place for int variable
+float y = 67.67777f; // reserving place float variable
+
+/// <summary>
+/// stack is a temporary storage where such things like: variables and other little
+/// things are stored. When a method is executed, stack cleans up memory for other things.
+/// this method can be called and reused Method(something); anywhere
+/// </summary>
+void Method(int n)
+{
+    Console.WriteLine(n);
+    double smth = 5.0;
+    decimal anth = 44.4444m;
+}
+Method(x); // prints 67
