@@ -320,19 +320,20 @@ Console.ReadKey(true);
 /// <summary> 
 /// this method counts to 5 using for loop 
 /// also this method doesn't return anything
-/// since it's a void method, only prints
+/// since it's a void method, only prints (executes things inside it)
 /// </summary>
 void CountToFive()
 {
-    for(int i = 1; i <= 5; i++)
+    for(int i = 1; i <= 5; i++) 
     {
-        Console.WriteLine(i);
+        Console.WriteLine(i); // 1, 2, 3... goes until 5
     }
 }
 CountToFive();
 
 // challenge
-int height = AskForNumber("What is your height? (type in cm, only numbers) "); //  saving result of the method (assigning it to a variable)
+int height = AskForNumber("What is your height? (type in cm, only numbers) "); // assigning returned value (age that user typped) to a variable
+                                                                               // e.g. now height = 165;
 Console.WriteLine($"You are {height}cm tall!");
 
 /// <summarry>
@@ -341,7 +342,7 @@ Console.WriteLine($"You are {height}cm tall!");
 /// </summarry>
 int AskForNumber(string question)
 {
-    Console.WriteLine(question); //  printing the question, if we didn't write this line our programm wouldn't ask the question
+    Console.WriteLine(question); //  printing the question, if we didn't write this line our programm WOULDN'T PRINT the question
 
     string usersResponse = Console.ReadLine();
     int number = int.Parse(usersResponse); // converting string to an int
@@ -362,29 +363,36 @@ int AskForNumberInRange(string sentence, int min, int max)
 {
     Console.WriteLine("Your number will be returned only if it's in the range"); // giving instructions
     Console.Write(sentence); // this is the crucial point to print the sentence, if we didn't
-    // write this code parameter(string sentence) would be useless
+    // write this code, parameter(string sentence) would be useless
 
     while (true)
     {
       int selectedNumber = int.Parse(Console.ReadLine()); // parsing string to an int
 
-        if (selectedNumber >= min && selectedNumber <= max)
+        if (selectedNumber >= min && selectedNumber <= max) // if the selected number is greater than min value and less than max
+                                                            // that means it's in the range
         {
             Console.WriteLine($"Your number in the range! {selectedNumber}");
             return selectedNumber; // if this condition is true, return the value and exit the method
         }
         else
-            Console.Write("Select another number: ");
+            Console.Write("Select another number: "); // if it's not in range, keep asking quiestion until user
+                                                      // guess a correct one
     }
 }
 
 // --- The Basics Of Recursion ---
+
+/// <summary> 
+/// factorial is multiplication of all numbers before a number user selected
+/// e.g. 6 --> 5 * 4 * 3 * 2 * 1 = ...
+/// </summary>
 int Factorial(int number) // creating simple method
 {
     if (number == 1) // ---> base case, if number gets to 1 ---> method ends and returns 1
         return 1; // now number = 1
 
-    return number * Factorial(number - 1); // e.g. 6 * (result of the Factorial(5 -1) )
+    return number * Factorial(number - 1); // e.g. 6 * result of the Factorial(6 - 1) 
                                            // compiler doesn't know about the result of Factorial(5)
                                            // so it skips it and moves to the next by calling the method itself
 }
@@ -403,13 +411,18 @@ CountDown(choosenNum);
 /// in this case, method calls itself and shrinks by 1
 /// this code will repeat until 0 which is the BASE CASE
 /// rule: everytime you call a method in it's own method, 
-/// it gets restarted and gets repetead until
+/// it gets restarted and gets repetead until base case
+/// it's basically a loop but now we're using recursion to call the method itself again instead of "for"
+/// or "while" loops. 
+/// Method calls itself inside itself
 /// </summary>
 void CountDown(int number)
 {
-    if (number == 0) // if an argument is 0
+    // base case
+    if (number == 0) // if an argument is 0 
         return; // end this method (stop executing)
 
     Console.WriteLine(number); // prints the number
     CountDown(number - 1); // after 15 is printed ---> 15 - 1 = 14 ---> then Console.WriteLine(number) prints 14...
+                           // it's basically a loop 
 }
