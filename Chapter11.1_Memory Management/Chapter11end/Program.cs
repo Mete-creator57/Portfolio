@@ -64,6 +64,9 @@ Console.WriteLine($"{words[1]} {words[2]} {words[0]}."); // displays I love C#.
 /// </summary>
 int[] numbers = new int[] { 6, 7, 8, 9, 0 };
 
+
+// --- REFERENCE TYPE VS VALUE TYPE ---
+
 int a, b;
 a = 4;
 b = 5;
@@ -101,3 +104,16 @@ Console.WriteLine(a1[1]); // arrays are mutable, you can change a reference
 a2 = new int[] { 4, 5, 7 };
 Console.WriteLine(a2[1]);
 Console.WriteLine(a1[1]);
+
+// --- Value Semantics vs Reference Semantics ---
+
+int smth = 99; // the same value type(int)
+int anth = 99;
+
+// when values are equal because the have equal contents it's called value semantics
+bool areEqual = (smth == anth); // true
+
+string k = "Visual Studio";
+string p = "Visual" + "St" + "Udio";
+
+bool areEqual2 = (k == p); // will be true even though these are reference type values (strings)
