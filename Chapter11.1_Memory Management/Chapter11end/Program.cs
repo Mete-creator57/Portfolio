@@ -85,8 +85,17 @@ a1 = new int[] { 6, 5, 7 };
 
 i2 = i1; // copying from first to second
 s2 = s1;
-// sharing THE SAME REFERENCE, so now if you change either of these arrays 
-a2 = a1; // another one will change and have same reference as well
+
+/// <summary>
+/// // sharing THE SAME REFERENCE, so now if you change one of  these arrays 
+/// // another one will change too and have the same things in it as well
+/// This happens because these 2 arrays share the same reference,
+/// so the other array(a2) can access everything that the first array(a1) have
+/// reference (these 2 arrays are sharing) is on The Stack 
+/// the data itself(arrays) is on The Heap
+/// </summary>
+a2 = a1; 
+
 
 Console.WriteLine(s2);
 
@@ -117,3 +126,11 @@ string k = "Visual Studio";
 string p = "Visual" + "St" + "Udio";
 
 bool areEqual2 = (k == p); // will be true even though these are reference type values (strings)
+
+// --- Garbage Collector ---
+///<summary>
+/// garbage collector cleans up only the Heap, not the Stack
+/// Also garbage collector cleans up the Heap automaticcaly with no worry about memory leaks. (for now)
+/// </summary>
+int[] bazbar = new int[1]; // reserved for one number
+bazbar = new int[100];   // changed and now one hundreed numbers can fit in
