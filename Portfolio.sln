@@ -17,10 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter11.1_Memory Manageme
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter11end", "Chapter11.1_Memory Management\Chapter11end\Chapter11end.csproj", "{021F057C-B24A-4332-A787-A2987ACFC15E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basics_Final Boss", "Basics_Final Boss", "{0063F4F0-5E42-3202-0E9E-5D407A6A38D1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basics Final Boss", "Basics_Final Boss\Basics Final Boss\Basics Final Boss.csproj", "{12D2D2D9-DFD9-4DAD-9E67-9C5C0A89304B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,18 +63,6 @@ Global
 		{021F057C-B24A-4332-A787-A2987ACFC15E}.Release|x64.Build.0 = Release|Any CPU
 		{021F057C-B24A-4332-A787-A2987ACFC15E}.Release|x86.ActiveCfg = Release|Any CPU
 		{021F057C-B24A-4332-A787-A2987ACFC15E}.Release|x86.Build.0 = Release|Any CPU
-		{12D2D2D9-DFD9-4DAD-9E67-9C5C0A89304B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12D2D2D9-DFD9-4DAD-9E67-9C5C0A89304B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12D2D2D9-DFD9-4DAD-9E67-9C5C0A89304B}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{12D2D2D9-DFD9-4DAD-9E67-9C5C0A89304B}.Debug|x64.Build.0 = Debug|Any CPU
-		{12D2D2D9-DFD9-4DAD-9E67-9C5C0A89304B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{12D2D2D9-DFD9-4DAD-9E67-9C5C0A89304B}.Debug|x86.Build.0 = Debug|Any CPU
-		{12D2D2D9-DFD9-4DAD-9E67-9C5C0A89304B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12D2D2D9-DFD9-4DAD-9E67-9C5C0A89304B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{12D2D2D9-DFD9-4DAD-9E67-9C5C0A89304B}.Release|x64.ActiveCfg = Release|Any CPU
-		{12D2D2D9-DFD9-4DAD-9E67-9C5C0A89304B}.Release|x64.Build.0 = Release|Any CPU
-		{12D2D2D9-DFD9-4DAD-9E67-9C5C0A89304B}.Release|x86.ActiveCfg = Release|Any CPU
-		{12D2D2D9-DFD9-4DAD-9E67-9C5C0A89304B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +72,5 @@ Global
 		{05A61517-B17F-3B75-4703-47637971236A} = {76A62B82-1C30-7B01-4550-D471A8D00750}
 		{5FD06C01-42D4-4509-A8D4-753AE2028D7C} = {05A61517-B17F-3B75-4703-47637971236A}
 		{021F057C-B24A-4332-A787-A2987ACFC15E} = {2B83B58A-45F5-E0BE-B563-1AA679171F27}
-		{12D2D2D9-DFD9-4DAD-9E67-9C5C0A89304B} = {0063F4F0-5E42-3202-0E9E-5D407A6A38D1}
 	EndGlobalSection
 EndGlobal
