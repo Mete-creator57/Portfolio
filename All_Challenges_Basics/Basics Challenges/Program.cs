@@ -47,5 +47,70 @@ void VarKeyword()
     var input = Convert.ToInt32(Console.ReadLine()); // converting string to int using "var" keyword
     Console.WriteLine($"You are {input} years old!");
 }
+// Level 7 (Math)
+// both min and max values for int 
+int maxNumber = int.MaxValue; 
+int minNumber = int.MinValue;
+
+// only "double" and "float" types can define a value for both negative infinity and positive infinity (expect decimal)
+double infinity = double.PositiveInfinity;
+float infinity1 = float.NegativeInfinity;
+
+// NaN (not a number) can be used only by "float" and "double" types as well
+float notARealNumber = float.NaN;
+
+ComputingTriangleArea(); // calling the method
+void ComputingTriangleArea()
+{
+    Console.WriteLine("Both length and width will be represented in cm");
+    Console.Write("Enter the base: ");
+    var basee = int.Parse(Console.ReadLine()); // converting string to int
+    Console.Write("Enter the height: ");
+    var height = Convert.ToInt32(Console.ReadLine()); // parsing string to int
+
+    int area = basee * height / 2; // computing area based on what user has typed
+    Console.WriteLine($"The triangle area is {area} ");
+
+}
+
+TheFourSistersAndTheDuckbear();
+void TheFourSistersAndTheDuckbear()
+{
+    Console.Write("Enter the number of chocolate eggs gathered that day: ");
+    var eggsTotal = int.Parse(Console.ReadLine()); // parsing string to int
+    int sistersNumber = 4;
+
+    // using "/" division here, we compute how many eggs are for each sister
+    int eggsForEachSister = eggsTotal / sistersNumber; // computing an amount of eggs each sister will get 
+                                                       // at the end of the day
+
+    // using "%" here , we compute how many eggs ARE LEFT  for the Duckbear
+    int eggsForDuckbear = eggsTotal % sistersNumber; // e.g. 11 % 4 = 3 (left for Duckbear)
+                                                     // (remainder)
+
+    Console.WriteLine($"Each sister gets {eggsForEachSister} eggs"); // new method
+    Console.WriteLine("The Duckbear gets " + eggsForDuckbear + " eggs"); // old method
 
 
+}
+int g = 5;
+g -= 2; // equvilant of g = g - 2 but much shorter
+
+// increment and decrement operators
+g++; // the same as g = g + 1; or g += 1;
+g--;
+
+TheDominionOfKings(); // calling the method
+void TheDominionOfKings()
+{
+    // estate: 1 point , duchy: 3 points , province: 6 points
+    Console.Write("Enter an amount of provinces you have in your custody: ");
+    var provinces = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Enter an amount of duchies you have in your custody: ");
+    var duchies = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Enter an amount of estates you have in your custody: ");
+    var estates = Convert.ToInt32(Console.ReadLine());
+
+    int totalScore = (estates * 1) + (duchies * 3) + (provinces * 6);
+    Console.WriteLine("Your point total is " + totalScore);
+}
