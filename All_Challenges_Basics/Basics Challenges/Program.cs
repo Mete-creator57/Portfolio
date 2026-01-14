@@ -134,4 +134,13 @@ Console.WriteLine($"X: {x} and Y: {y}");
 x = 5;
 int z = x++;
 // ONLY X IS EQUAL TO 6, WHILE Z STILL REMAINS 5
-Console.WriteLine($"X: {x} and Z: {z}"); 
+Console.WriteLine($"X: {x} and Z: {z}");
+
+// more practice 
+int foo = 45;
+int baz = foo++; // baz remains 45, foo evolves into 46
+// Foo is 46, baz is 45 (just copies the original value of 45 and increase foo by 1)
+
+int bar = 45;
+int bazbar = ++bar; // bar gets an increase of 1, then it's being assigned to bazbar
+// RESULT: Both bar and bazbar are 46
