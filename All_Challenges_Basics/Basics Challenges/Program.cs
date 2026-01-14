@@ -114,3 +114,24 @@ void TheDominionOfKings()
     int totalScore = (estates * 1) + (duchies * 3) + (provinces * 6);
     Console.WriteLine("Your point total is " + totalScore);
 }
+// Prefix and Postfix Increment and Decrement Operators
+int x;
+
+// PREFIX NOTATION
+// first, the value of X is being incremented by 1 (5 ---> 6)
+// then, this value is being ASSIGNED to both Y and X (x = 6, y = 6)
+// RESULT: Both X and Y are equal to 6
+x = 5;
+int y = ++x; 
+// BOTH X AND Y ARE EQUAL TO 6
+Console.WriteLine($"X: {x} and Y: {y}");
+
+// POSTFIX NOTATION
+// first, the value of X is being ASSIGNED to z (original value) (z = 5)
+// then, this value is being incremented  and assigned to X (5 ---> 6) (x = 6)
+// NOTE: Z has the original value of X, while X is being INCREMENTED by 1
+// RESULT: X is 6, Z is 5
+x = 5;
+int z = x++;
+// ONLY X IS EQUAL TO 6, WHILE Z STILL REMAINS 5
+Console.WriteLine($"X: {x} and Z: {z}"); 
