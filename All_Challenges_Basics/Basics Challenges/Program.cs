@@ -180,3 +180,43 @@ Console.WriteLine($"Double: {computation}");
 // so we need to CONVERT EQUATION to double
 double calculation = (double)firstNum / secondNum; // (double) takes precedence over equation because it's in the pparentheses
 Console.WriteLine($"Double: {calculation}");
+
+// Math and MathF Classes
+double radius = 3.0;
+double areaOfCircle = Math.PI * radius * radius;
+Console.WriteLine(areaOfCircle);
+
+double aNumber = 67.2;
+double numSquared = Math.Pow(aNumber, 3); // power operator
+double squareRoot = Math.Sqrt(numSquared); // square root
+Console.WriteLine(aNumber);
+
+// absolute value (- 2 ---> 2)
+int smth = Math.Abs(-2); // now this variable is 2
+
+// trigonometric functions
+double sin = Math.Sin(30); // 1/2
+double cos = Math.Cos(60); // 1/2
+double tan = Math.Tan(45); // 1
+
+// Min, Max and Clamp
+int something = Math.Min(67, 100); // prints 67 because 100 > 67
+int anything = Math.Max(67, 100); // prints 100
+
+double rounding = Math.Round(6.7); // rounds number to the nearest integer
+Console.WriteLine(rounding);
+
+int rounding1 = (int)Math.Round(6.7); // converting double to int (explicit conversion)
+Console.WriteLine(rounding1);
+
+// when there is a situation where is a half (7.5, 8,5..) it rounds to the nearest EVEN number
+// Consider this code:
+double roundToEven = Math.Round(7.5); // rounds to 8 because it's an even number
+int roundToEvenAgain = (int)Math.Round(6.5); // rounds to 6
+Console.WriteLine($"{roundToEven} and {roundToEvenAgain}"); // here is no data loss
+
+double smthing = 6.7;
+int anthing = (int)smthing; // explicit conversion from double to int
+                            // data loss occurs and 6.7 turns into simple 6
+                            // RULE: Int truncates(removes) anything that comes after "." and turns numbers into integers
+Console.WriteLine(anthing);
