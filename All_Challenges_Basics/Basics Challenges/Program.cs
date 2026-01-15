@@ -203,9 +203,11 @@ double tan = Math.Tan(45); // 1
 int something = Math.Min(67, 100); // prints 67 because 100 > 67
 int anything = Math.Max(67, 100); // prints 100
 
+// Math.Round (rounding to the nearest integer) 
 double rounding = Math.Round(6.7); // rounds number to the nearest integer
 Console.WriteLine(rounding);
 
+// Expicit and Implicit conversions practice
 int rounding1 = (int)Math.Round(6.7); // converting double to int (explicit conversion)
 Console.WriteLine(rounding1);
 
