@@ -144,3 +144,39 @@ int baz = foo++; // baz remains 45, foo evolves into 46
 int bar = 45;
 int bazbar = ++bar; // bar gets an increase of 1, then it's being assigned to bazbar
 // RESULT: Both bar and bazbar are 46
+
+// WORKING WITH DIFFERENT TYPES AND CASTING
+
+// so now, int stores byte's value
+byte aByte = 6;
+int anInt = aByte; // impicit conversion because int is bigger than byte
+Console.WriteLine($"Byte: {aByte}"); // byte is 6
+Console.WriteLine($"Int: {anInt}"); // int is 6 as well
+
+// (a type to convert to)someInt
+// so you place a type co convert to into parentheses to make an explicit conversion
+// and continue converting (assigning one type to another)
+int someInt = 6;
+byte someByte = (byte)someInt; // explicit conversion
+// in this case, casting operator has to be used in order to assure compiler that 
+// we know what we're doing
+
+short first = 7888;
+short second = 9999;
+int result = first + second; // implicitly converts short to int automatically
+
+// but if we do want to do the same thing but using short type to store a result
+// we could have done like this:
+short first1 = 7888;
+short second2 = 9999;
+short result1 = (short)(first + second); // equation takes precedence over (short) due to how C# was created
+// RULE: place a type you want to convert to inside parentheses BEFORE converting
+int firstNum = 100;
+int secondNum = 10000;
+double computation = firstNum / secondNum; // this one is done by integer divison, 
+                                           // so the result in here is simply 0
+Console.WriteLine($"Double: {computation}");
+
+// so we need to CONVERT EQUATION to double
+double calculation = (double)firstNum / secondNum; // (double) takes precedence over equation because it's in the pparentheses
+Console.WriteLine($"Double: {calculation}");
