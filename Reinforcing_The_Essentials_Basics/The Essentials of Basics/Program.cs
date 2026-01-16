@@ -222,3 +222,26 @@ int anthing = (int)smthing; // explicit conversion from double to int
                             // data loss occurs and 6.7 turns into simple 6
                             // RULE: Int truncates(removes) anything that comes after "." and turns numbers into integers
 Console.WriteLine(anthing);
+
+// Level 8 (Console 2.0) Challenge
+
+Console.Clear(); // clears the window
+
+// The Defense of Consolas
+// the main idea is to surround the fireball and disarm it
+Console.Write("Enter the target row: ");
+int row = Convert.ToInt32(Console.ReadLine()); // convert string to int
+Console.Write("Enter the target column: ");
+int column = int.Parse(Console.ReadLine()); // parsing string to int
+
+Console.ForegroundColor = ConsoleColor.Yellow; // changing foreground colors
+
+Console.WriteLine("Deploy to: ");
+Console.WriteLine($"({row}, {column - 1} )"); // column number decreases by 1
+Console.WriteLine($"({row - 1}, {column} )"); // row number decreases by 1, column number stay still
+Console.WriteLine($"({row}, {column + 1} )"); 
+Console.WriteLine($"({row + 1}, {column} )");
+
+Console.Beep();
+
+Console.ResetColor();
