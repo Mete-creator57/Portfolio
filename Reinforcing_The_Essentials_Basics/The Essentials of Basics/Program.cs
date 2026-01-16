@@ -223,12 +223,14 @@ int anthing = (int)smthing; // explicit conversion from double to int
                             // RULE: Int truncates(removes) anything that comes after "." and turns numbers into integers
 Console.WriteLine(anthing);
 
-// Level 8 (Console 2.0) Challenge
-
 Console.Clear(); // clears the window
 
+
+
+// Level 8 (Console 2.0) Challenge
+
 // The Defense of Consolas
-// the main idea is to surround the fireball and disarm it
+// the main idea is to surround the fireball (or bomb) and disarm it
 Console.Write("Enter the target row: ");
 int row = Convert.ToInt32(Console.ReadLine()); // convert string to int
 Console.Write("Enter the target column: ");
@@ -238,10 +240,10 @@ Console.ForegroundColor = ConsoleColor.Yellow; // changing foreground colors
 
 Console.WriteLine("Deploy to: ");
 Console.WriteLine($"({row}, {column - 1} )"); // column number decreases by 1
-Console.WriteLine($"({row - 1}, {column} )"); // row number decreases by 1, column number stay still
-Console.WriteLine($"({row}, {column + 1} )"); 
+Console.WriteLine($"({row - 1}, {column} )"); // row number decreases by 1, column number stays still
+Console.WriteLine($"({row}, {column + 1} )"); // ...
 Console.WriteLine($"({row + 1}, {column} )");
 
-Console.Beep();
+Console.Beep(); // producing a sound
 
-Console.ResetColor();
+Console.ResetColor(); // setting colors back to default
