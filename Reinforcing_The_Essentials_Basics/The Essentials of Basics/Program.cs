@@ -247,3 +247,9 @@ Console.WriteLine($"({row + 1}, {column} )");
 Console.Beep(); // producing a sound
 
 Console.ResetColor(); // setting colors back to default
+
+// Conditional Operator (Level 9)
+int score = 100;
+// condition expression ? expression if true : expression if false
+string textToDisplay = score > 50 ? "You passed!" : "You failed";
+Console.WriteLine(textToDisplay);
