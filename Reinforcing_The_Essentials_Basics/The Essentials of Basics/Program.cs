@@ -387,3 +387,56 @@ void MultipleCasesTheSameArm()
             break;
     }
 }
+
+SwitchExpressionPractice(); // calling the method
+// switch EXPRESSION
+void SwitchExpressionPractice()
+{
+    Console.Write("Type any number between 1 and 10: ");
+    int chosenNumber = int.Parse(Console.ReadLine()); // parsing string to int
+
+    string message;
+
+    // literally ASSIGNING what comes from "chosenNumber" to "message" (like converting)
+    // switch(chosenNumber).  e.g. if chosenNumber = 1, then assign the text to another variable "message"
+
+  // "switch" keyword here is for converting and assigning things from a variable that gets checked to another one
+    message = chosenNumber switch // variable to assign value to = thing that gets checked + switch 
+    {
+        // the same as we have done in switch statements but without writing "case:" and "break;"
+
+        // case 1:
+        //  Console.WriteLine("The smallest number!");
+        //  break;
+        1 => "The smallest number!", // if "1" then => "..."
+        2 => "2nd number!",
+        3 => "3rd number",
+        4 => "4th number!" , 
+        5 => "5th number!",
+        6 => "6th number!",
+        7 => "7th number!",
+        8 => "8th number!",
+        9 => "9th number!",
+        10 => "10th number!",
+        _ => "I don't know that number" // default
+    };
+    Console.WriteLine(message);
+
+
+
+    Console.Write("Write the payment status: ");
+    string status = Console.ReadLine();
+
+    string color;
+
+    color = status switch
+    {
+        "Paid" => "Green",
+        "Cancelled" => "Red",
+        "Pending" => "Yellow",
+        _ => "Gray", // default case
+
+
+    };
+    Console.WriteLine(color);
+}
