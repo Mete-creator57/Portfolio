@@ -49,7 +49,7 @@ void VarKeyword()
 }
 // Level 7 (Math)
 // both min and max values for int 
-int maxNumber = int.MaxValue; 
+int maxNumber = int.MaxValue;
 int minNumber = int.MinValue;
 
 // only "double" and "float" types can define a value for both negative infinity and positive infinity (expect decimal)
@@ -122,7 +122,7 @@ int x;
 // then, this value is being ASSIGNED to both Y and X (x = 6, y = 6)
 // RESULT: Both X and Y are equal to 6
 x = 5;
-int y = ++x; 
+int y = ++x;
 // BOTH X AND Y ARE EQUAL TO 6
 Console.WriteLine($"X: {x} and Y: {y}");
 
@@ -248,8 +248,127 @@ Console.Beep(); // producing a sound
 
 Console.ResetColor(); // setting colors back to default
 
-// Conditional Operator (Level 9)
+Console.Write("Press any key to continue: ");
+Console.ReadKey(true); // requesting the User to press any key in order to continue
+
+// Conditional Operator (Level 9) if-else statements
 int score = 100;
 // condition expression ? expression if true : expression if false
 string textToDisplay = score > 50 ? "You passed!" : "You failed";
 Console.WriteLine(textToDisplay);
+
+Console.Clear();
+
+// Level 10 (Switches)
+Console.WriteLine("Avast, matey! What be ye desire?");
+Console.WriteLine("1 – Rest ");
+Console.WriteLine("2 – Pillage the port ");
+Console.WriteLine("3 – Set sail  ");
+Console.WriteLine("4 – Release the Kraken ");
+Console.WriteLine("What be the plan, Captain?");
+int choice = Convert.ToInt32(Console.ReadLine()); // parsing string to int
+
+// using switch STATEMENT
+switch (choice)
+{
+    case 1:
+        Console.WriteLine("Ye rest and recover your health.");
+        break;
+    case 2:
+        Console.WriteLine("Raiding the port town get ye 50 gold doubloons");
+        break;
+    case 3:
+        Console.WriteLine("The wind is at your back; the open horizon ahead.");
+        break;
+    case 4:
+        Console.WriteLine("Tis but a baby Kraken, but still eats toy boats.");
+        break;
+    default:
+        Console.WriteLine("Apologies. I do not know that one. Restart the programm and enter a valid number");
+        break;
+
+}
+
+Console.Write("Write your name: ");
+string name = Console.ReadLine();
+
+// switch STATEMENT
+// any type of variable can be used and checked in switch statements
+
+switch (name) // checking name of the User (of what user typed)
+{
+    case "Mete": // using string type 
+        Console.WriteLine("That's a common Turkish name!");
+        break;
+    case "Daniel":
+        Console.WriteLine("That's a common Italien name!");
+        break;
+
+    default: // if neither of conditions matches
+        Console.WriteLine("I do not know that name, sorry");
+        break;
+}
+
+
+
+PracticingSwitchStatements();
+// more practice with switch statements...
+void PracticingSwitchStatements()
+{
+    while (true)
+    {
+        Console.Write("Enter your favorite color: ");
+        string favColor = Console.ReadLine();
+
+        switch (favColor)
+        {
+            case "yellow":
+                Console.WriteLine("It's a great and bright color!");
+                // if we used "break" instead, we would exit only SWITCH STATEMENT but not the whole loop istelf
+                return; // exit the whole loop itself!
+
+            case "blue":
+                Console.WriteLine("It seems you like seas!");
+                return;
+
+            default: // if neither of conditions match with what user typed
+                break;
+        }
+    }
+
+}
+
+PracticingSwitchesAgain();
+
+void PracticingSwitchesAgain()
+{
+    bool isRunning = true; // creating bool variable to control when loop has to stop or run
+    // the same as while(true)
+    while (isRunning) // endless loop
+    {
+
+        Console.Write("Type your favorite car: ");
+        string favCar = Console.ReadLine();
+
+        switch (favCar)
+        {
+            case "BMW":
+                Console.WriteLine("BMW is better that Audi IMO");
+                isRunning = false; // making the condition of loop false.
+                                   // so now this while loop is literally not endless anymore
+                break; // exiting only this switch statement and going to the while loop
+                       // which is currently not endless anymore, so we can exit the loop now
+
+            case "Audi":
+                Console.WriteLine("Audi is a great brand!");
+                isRunning = false;
+                break;
+
+            default:
+                Console.WriteLine("Sorry, I don't know that car brand");
+                break; // exiting switch statement and returning to the while loop
+                       // and because while loop is "true" by default, question will be asked forever
+        }
+    }
+}
+
