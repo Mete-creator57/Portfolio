@@ -372,3 +372,18 @@ void PracticingSwitchesAgain()
     }
 }
 
+MultipleCasesTheSameArm(); // calling the method
+void MultipleCasesTheSameArm()
+{
+    // Multiple Cases for the Same Arm
+    Console.WriteLine("What periphirals do you have?");
+    string device = Console.ReadLine();
+    switch (device)
+    {
+        case "mouse":
+        case "keyboard": // all of those cases are valid and if user types one of these, 
+        case "headphones": // result will remain the same.
+            Console.WriteLine("That's good!");
+            break;
+    }
+}
