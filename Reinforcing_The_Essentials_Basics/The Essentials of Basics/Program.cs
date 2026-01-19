@@ -257,6 +257,9 @@ int score = 100;
 string textToDisplay = score > 50 ? "You passed!" : "You failed";
 Console.WriteLine(textToDisplay);
 
+Console.Write("Press any key to continue: ");
+Console.ReadKey(true);
+
 Console.Clear();
 
 // Level 10 (Switches)
@@ -410,7 +413,7 @@ void SwitchExpressionPractice()
         //  break;
         1 => "The smallest number!", // if "1" then => "..."
         2 => "2nd number!",
-        3 => "3rd number",
+        3 => "3rd number!",
         4 => "4th number!",
         5 => "5th number!",
         6 => "6th number!",
