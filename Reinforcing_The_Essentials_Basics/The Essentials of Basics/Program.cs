@@ -400,7 +400,7 @@ void SwitchExpressionPractice()
     // literally ASSIGNING what comes from "chosenNumber" to "message" (like converting)
     // switch(chosenNumber).  e.g. if chosenNumber = 1, then assign the text to another variable "message"
 
-  // "switch" keyword here is for converting and assigning things from a variable that gets checked to another one
+    // "switch" keyword here is for converting and assigning things from a variable that gets checked to another one
     message = chosenNumber switch // variable to assign value to = thing that gets checked + switch 
     {
         // the same as we have done in switch statements but without writing "case:" and "break;"
@@ -411,7 +411,7 @@ void SwitchExpressionPractice()
         1 => "The smallest number!", // if "1" then => "..."
         2 => "2nd number!",
         3 => "3rd number",
-        4 => "4th number!" , 
+        4 => "4th number!",
         5 => "5th number!",
         6 => "6th number!",
         7 => "7th number!",
@@ -439,4 +439,74 @@ void SwitchExpressionPractice()
 
     };
     Console.WriteLine(color);
+}
+
+BuyingInventory();
+// Completing Challenge (Buying Inventory)
+void BuyingInventory()
+{
+    // Products List
+    Console.WriteLine("The following items are available: ");
+    Console.WriteLine("1 – Rope  ");
+    Console.WriteLine("2 – Torches  ");
+    Console.WriteLine("3 – Climbing Equipment  ");
+    Console.WriteLine("4 – Clean Water  ");
+    Console.WriteLine("5 – Machete  ");
+    Console.WriteLine("6 – Canoe  ");
+    Console.WriteLine("7 - Food Suplies ");
+    string answer;
+
+    Console.Write("Type a number you want to see a price tag of: ");
+    int num = Convert.ToInt32(Console.ReadLine()); // parsing string to int
+
+    // using switch expression
+    // assingning the result of chosen number(text) to the variable "answer" which is string 
+    // and so, it can store text in it
+    answer = num switch
+    {
+        1 => $"Rope costs 10 gold",
+        2 => "Torches cost 15 gold.",
+        3 => "Climbing Equipment costs 25 gold",
+        4 => "Clean Water costs 1 gold",
+        5 => "Machete costs 20 gold",
+        6 => "Canoe costs 200 gold",
+        7 => "Food Suplies cost 1 gold",
+        _ => "There is no product like that"
+
+    };
+    Console.WriteLine(answer);
+
+    // or we could have done like this too
+    Console.WriteLine("So, which one do you want to buy?");
+    int purchase = Convert.ToInt32(Console.ReadLine());
+
+    // using switch STATEMENT this time
+    switch (purchase)
+    {
+        case 1:
+            Console.WriteLine("Rope granted");
+            break;
+        case 2:
+            Console.WriteLine("Torches granted");
+                break;
+        case 3:
+            Console.WriteLine("Climbing Equipment granted");
+                break;
+        case 4:
+            Console.WriteLine("Clean Water granted");
+                break;
+        case 5:
+            Console.WriteLine("Machete granted");
+                break;
+        case 6:
+            Console.WriteLine("Canoe granted");
+                break;
+        case 7:
+            Console.WriteLine("Food Suplies granted");
+                break;
+        default:
+            Console.WriteLine("Sorry, this item doesn't exist");
+            break;
+    
+    }
 }
