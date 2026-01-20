@@ -287,7 +287,7 @@ switch (choice)
         Console.WriteLine("Tis but a baby Kraken, but still eats toy boats.");
         break;
     default:
-        Console.WriteLine("Apologies. I do not know that one. Restart the programm and enter a valid number");
+        Console.WriteLine("Apologies, I do not know that one. Restart the programm and enter a valid number");
         break;
 
 }
@@ -335,7 +335,8 @@ void PracticingSwitchStatements()
                 return;
 
             default: // if neither of conditions match with what user typed
-                break;
+                break; // exiting switch statement and going back to endless while loop
+                // so we start the loop again and the only way to exit it is to type either "yellow" or "blue"
         }
     }
 
@@ -350,10 +351,15 @@ void PracticingSwitchesAgain()
     while (isRunning) // endless loop
     {
 
-        Console.Write("Type your favorite car: ");
-        string favCar = Console.ReadLine();
+        Console.Write("Type your favorite car brand: ");
+        string favBrand = Console.ReadLine(); // putting what user typed into the variable
+                                              // now "favBrand" holds value that user typed in the console
 
-        switch (favCar)
+        // if (favBrand == "BMW") 
+        // {
+        //  Console.WriteLine("BMW is better that Audi IMO");
+        // }
+        switch (favBrand) // checking the variable 
         {
             case "BMW":
                 Console.WriteLine("BMW is better that Audi IMO");
@@ -367,10 +373,11 @@ void PracticingSwitchesAgain()
                 isRunning = false;
                 break;
 
-            default:
+            default: // if neither of conditions match with what user types
                 Console.WriteLine("Sorry, I don't know that car brand");
                 break; // exiting switch statement and returning to the while loop
-                       // and because while loop is "true" by default, question will be asked forever
+                       // and because while loop is "true" by default, question will be asked forever until 
+                       // either "BMW" or "Audi" are typed in the console
         }
     }
 }
@@ -381,10 +388,11 @@ void MultipleCasesTheSameArm()
     // Multiple Cases for the Same Arm
     Console.WriteLine("What periphirals do you have?");
     string device = Console.ReadLine();
-    switch (device)
+
+    switch (device) // checking the value that "device" variable stores
     {
         case "mouse":
-        case "keyboard": // all of those cases are valid and if user types one of these, 
+        case "keyboard": // all of these cases are valid and if user types one of these, 
         case "headphones": // result will remain the same.
             Console.WriteLine("That's good!");
             break;
@@ -393,6 +401,14 @@ void MultipleCasesTheSameArm()
 
 SwitchExpressionPractice(); // calling the method
 // switch EXPRESSION
+
+/// <summary>
+///  e.g. user selects and types number 1, then it gets checked and produces some text (cases) ,
+/// after that the text that belongs to number 1 gets assigned to the other variable "message" 
+/// which is a string type and so it can hold some text in itself. Finally some text displays
+/// the console. SWITCH keyword is used here for converting things that belong to some specific number in 
+/// "chosenNumber" variable to a string variable "message"
+/// </summary>
 void SwitchExpressionPractice()
 {
     Console.Write("Type any number between 1 and 10: ");
@@ -401,7 +417,7 @@ void SwitchExpressionPractice()
     string message;
 
     // literally ASSIGNING what comes from "chosenNumber" to "message" (like converting)
-    // switch(chosenNumber).  e.g. if chosenNumber = 1, then assign the text to another variable "message"
+    // e.g. if chosenNumber = 1, then assign the text to another variable "message"
 
     // "switch" keyword here is for converting and assigning things from a variable that gets checked to another one
     message = chosenNumber switch // variable to assign value to = thing that gets checked + switch 
@@ -411,7 +427,7 @@ void SwitchExpressionPractice()
         // case 1:
         //  Console.WriteLine("The smallest number!");
         //  break;
-        1 => "The smallest number!", // if "1" then => "..."
+        1 => "The smallest number!", // if chosenNumber stores "1" then => "..." some text
         2 => "2nd number!",
         3 => "3rd number!",
         4 => "4th number!",
@@ -423,7 +439,8 @@ void SwitchExpressionPractice()
         10 => "10th number!",
         _ => "I don't know that number" // default
     };
-    Console.WriteLine(message);
+    Console.WriteLine(message); // displaying the result of the assignment
+    
 
 
 
@@ -432,9 +449,11 @@ void SwitchExpressionPractice()
 
     string color;
 
+    // assign  text to another variable
     color = status switch
     {
-        "Paid" => "Green",
+     // status (what user typed) => "text"
+        "Paid" => "Green", // if user typed "paid" then "green"
         "Cancelled" => "Red",
         "Pending" => "Yellow",
         _ => "Gray", // default case
@@ -491,25 +510,25 @@ void BuyingInventory()
             break;
         case 2:
             Console.WriteLine("Torches granted");
-                break;
+            break;
         case 3:
             Console.WriteLine("Climbing Equipment granted");
-                break;
+            break;
         case 4:
             Console.WriteLine("Clean Water granted");
-                break;
+            break;
         case 5:
             Console.WriteLine("Machete granted");
-                break;
+            break;
         case 6:
             Console.WriteLine("Canoe granted");
-                break;
+            break;
         case 7:
             Console.WriteLine("Food Suplies granted");
-                break;
+            break;
         default:
             Console.WriteLine("Sorry, this item doesn't exist");
             break;
-    
+
     }
 }
