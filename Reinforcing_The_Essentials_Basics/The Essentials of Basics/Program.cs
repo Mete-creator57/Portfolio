@@ -462,83 +462,16 @@ void SwitchExpressionPractice()
     };
     Console.WriteLine(color);
 }
-
-BuyingInventory();
-// Completing Challenge (Buying Inventory)
-void BuyingInventory()
-{
-    // Products List
-    Console.WriteLine("The following items are available: ");
-    Console.WriteLine("1 – Rope  ");
-    Console.WriteLine("2 – Torches  ");
-    Console.WriteLine("3 – Climbing Equipment  ");
-    Console.WriteLine("4 – Clean Water  ");
-    Console.WriteLine("5 – Machete  ");
-    Console.WriteLine("6 – Canoe  ");
-    Console.WriteLine("7 - Food Suplies ");
-    string answer;
-
-    Console.Write("Type a number you want to see a price tag of: ");
-    int num = Convert.ToInt32(Console.ReadLine()); // parsing string to int
-
-    // using switch expression
-    // assingning the result of chosen number(text) to the variable "answer" which is string 
-    // and so, it can store text in it
-    answer = num switch
-    {
-        1 => $"Rope costs 10 gold",
-        2 => "Torches cost 15 gold.",
-        3 => "Climbing Equipment costs 25 gold",
-        4 => "Clean Water costs 1 gold",
-        5 => "Machete costs 20 gold",
-        6 => "Canoe costs 200 gold",
-        7 => "Food Suplies cost 1 gold",
-        _ => "There is no product like that"
-
-    };
-    Console.WriteLine(answer);
-
-    // or we could have done like this too
-    Console.WriteLine("So, which one do you want to buy?");
-    int purchase = Convert.ToInt32(Console.ReadLine());
-
-    // using switch STATEMENT this time
-    switch (purchase)
-    {
-        case 1:
-            Console.WriteLine("Rope granted");
-            break;
-        case 2:
-            Console.WriteLine("Torches granted");
-            break;
-        case 3:
-            Console.WriteLine("Climbing Equipment granted");
-            break;
-        case 4:
-            Console.WriteLine("Clean Water granted");
-            break;
-        case 5:
-            Console.WriteLine("Machete granted");
-            break;
-        case 6:
-            Console.WriteLine("Canoe granted");
-            break;
-        case 7:
-            Console.WriteLine("Food Suplies granted");
-            break;
-        default:
-            Console.WriteLine("Sorry, this item doesn't exist");
-            break;
-
-    }
-}
-Console.Write("Press any key to continue: ");
+Console.Write("Press anything to continue: ");
 Console.ReadKey(true);
+Console.Clear();
 
-DiscountedInventory();
-// Completing Challenge (Discounted Inventory)
-void DiscountedInventory()
+BuyingAndDiscountedInventory(); // calling the method
+
+// Completing Challenge (Buying Inventory)
+void BuyingAndDiscountedInventory()
 {
+    // Items List
     Console.WriteLine("The following items are available: ");
     Console.WriteLine("1 – Rope  ");
     Console.WriteLine("2 – Torches  ");
@@ -547,49 +480,56 @@ void DiscountedInventory()
     Console.WriteLine("5 – Machete  ");
     Console.WriteLine("6 – Canoe  ");
     Console.WriteLine("7 - Food Suplies ");
+    string response;
 
+    Console.Write("Type an item number you would like to purchase: ");
+    int num = Convert.ToInt32(Console.ReadLine()); // converting string to int
 
-
-    Console.Write("Type a number you want to see a price tag of: ");
-    int numBer = Convert.ToInt32(Console.ReadLine()); // parsing string to int
-
-    Console.Write("Type your name here too: ");
-    string name = Console.ReadLine(); // getting name from the user
-
-    string response; // for displaying prices
-
-    if (name == "Mete")
+    // calculating how much each item costs
+    int price = num switch
     {
-        Console.WriteLine("Special discount code is activated! You get %50 discount!");
+        // e.g. if user choose 1, then it will be 10 gold for the first item (rope)
+        // and price will be 10 too.  price = 10;
+        1 => 10,
+        2 => 15,
+        3 => 25,
+        4 => 1,
+        5 => 20,
+        6 => 200, // 6th item costs 200 gold (canoe)
+        7 => 1,
+        _ => -69,// default case
+    };
 
-        response = numBer switch
-        {
-            1 => "Rope costs 5 gold now!",
-            2 => "Torches cost 7.5 gold now!",
-            3 => "Climbing Equipment costs 12.5 gold now!",
-            4 => "Clean Water costs 0.5 gold now!",
-            5 => "Machete costs 10 gold now!",
-            6 => "Canoe costs 100 gold now!",
-            7 => "Food Supplies cost 0.5 gold now!",
-            _ => "Sorry, there is no item belonging to this number",
-
-        };
-        Console.WriteLine(response);
-
+    if(price == -69) // checking if default case gets executed
+    {
+        Console.WriteLine("Sorry, there is no such item avaliable in our shop");
+        return; // exiting the whole method
     }
-    else
+    // defining names of items
+    string nameOfAnItem = num switch
     {
-        response = numBer switch
-        {
-            1 => $"Rope costs 10 gold",
-            2 => "Torches cost 15 gold.",
-            3 => "Climbing Equipment costs 25 gold",
-            4 => "Clean Water costs 1 gold",
-            5 => "Machete costs 20 gold",
-            6 => "Canoe costs 200 gold",
-            7 => "Food Suplies cost 1 gold",
-            _ => "Sorry, there is no item belonging to this number"
-        };
+        1 => "Rope", // if user choose 1, then the name of the 1st item will be "Rope". This name gets assigned to the variable
+                     // "nameOfAnItem" variable
+        2 => "Torches",
+        3 => "Climbing Equipment",
+        4 => "Clean water",
+        5 => "Machete",
+        6 => "Canoe",
+        7 => "Food Supplies",
+        _ => "Invalid item"
+    };
+    Console.Write("Type your name here: ");
+    string name = Console.ReadLine();
 
+    if (name == "Mete") // if the name is Mete
+    {
+        Console.WriteLine($"Your name is {name}! Special discount code is activated and you get %50 off!");
+        double discountPrice = price / 2.0; // calculating discount (%50 off)
+        Console.WriteLine($"Discount has been applied. Now, {nameOfAnItem} costs {discountPrice} gold for you!");
+        Console.WriteLine($"Original price: {price}");
+    }
+    else // if the name is something else except Mete
+    {
+        Console.WriteLine($"{nameOfAnItem} costs {price} gold!"); // no discount, average price
     }
 }
