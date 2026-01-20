@@ -440,7 +440,7 @@ void SwitchExpressionPractice()
         _ => "I don't know that number" // default
     };
     Console.WriteLine(message); // displaying the result of the assignment
-    
+
 
 
 
@@ -452,7 +452,7 @@ void SwitchExpressionPractice()
     // assign  text to another variable
     color = status switch
     {
-     // status (what user typed) => "text"
+        // status (what user typed) => "text"
         "Paid" => "Green", // if user typed "paid" then "green"
         "Cancelled" => "Red",
         "Pending" => "Yellow",
@@ -529,6 +529,67 @@ void BuyingInventory()
         default:
             Console.WriteLine("Sorry, this item doesn't exist");
             break;
+
+    }
+}
+Console.Write("Press any key to continue: ");
+Console.ReadKey(true);
+
+DiscountedInventory();
+// Completing Challenge (Discounted Inventory)
+void DiscountedInventory()
+{
+    Console.WriteLine("The following items are available: ");
+    Console.WriteLine("1 – Rope  ");
+    Console.WriteLine("2 – Torches  ");
+    Console.WriteLine("3 – Climbing Equipment  ");
+    Console.WriteLine("4 – Clean Water  ");
+    Console.WriteLine("5 – Machete  ");
+    Console.WriteLine("6 – Canoe  ");
+    Console.WriteLine("7 - Food Suplies ");
+
+
+
+    Console.Write("Type a number you want to see a price tag of: ");
+    int numBer = Convert.ToInt32(Console.ReadLine()); // parsing string to int
+
+    Console.Write("Type your name here too: ");
+    string name = Console.ReadLine(); // getting name from the user
+
+    string response; // for displaying prices
+
+    if (name == "Mete")
+    {
+        Console.WriteLine("Special discount code is activated! You get %50 discount!");
+
+        response = numBer switch
+        {
+            1 => "Rope costs 5 gold now!",
+            2 => "Torches cost 7.5 gold now!",
+            3 => "Climbing Equipment costs 12.5 gold now!",
+            4 => "Clean Water costs 0.5 gold now!",
+            5 => "Machete costs 10 gold now!",
+            6 => "Canoe costs 100 gold now!",
+            7 => "Food Supplies cost 0.5 gold now!",
+            _ => "Sorry, there is no item belonging to this number",
+
+        };
+        Console.WriteLine(response);
+
+    }
+    else
+    {
+        response = numBer switch
+        {
+            1 => $"Rope costs 10 gold",
+            2 => "Torches cost 15 gold.",
+            3 => "Climbing Equipment costs 25 gold",
+            4 => "Clean Water costs 1 gold",
+            5 => "Machete costs 20 gold",
+            6 => "Canoe costs 200 gold",
+            7 => "Food Suplies cost 1 gold",
+            _ => "Sorry, there is no item belonging to this number"
+        };
 
     }
 }
