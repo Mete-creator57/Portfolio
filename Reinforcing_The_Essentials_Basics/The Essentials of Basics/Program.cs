@@ -548,3 +548,27 @@ void BuyingAndDiscountedInventory()
     }
 }
 
+Console.Write("Press any button to move on to loops: ");
+Console.ReadKey(true);
+
+Console.Clear(); // clears the window
+
+// Level 11 (Loops)
+int barbaz = 10;
+while(barbaz <= 20) // as long as this condition is true, things that are inside curly brackets will get repeated
+{
+    Console.WriteLine($"This is {barbaz}"); // prrints out the number in the console
+    barbaz++; // each time, variable gets increased by 1
+    // 10 + 1 = 11 (now barbaz is 11, and still this condition is true!) 10 <= 20
+}
+PracticingLoops();
+void PracticingLoops()
+{
+    int playersNumber = -1;
+
+    while (playersNumber < 0 || playersNumber > 10)
+    {
+        Console.Write("Enter a number between 0 and 10: ");
+        int aNumber = Convert.ToInt32(Console.ReadLine()); // converting string to int
+    }
+}
