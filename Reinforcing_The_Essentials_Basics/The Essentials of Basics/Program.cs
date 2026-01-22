@@ -480,12 +480,13 @@ void BuyingAndDiscountedInventory()
     Console.WriteLine("5 – Machete  ");
     Console.WriteLine("6 – Canoe  ");
     Console.WriteLine("7 - Food Suplies ");
-    string response;
+
 
     Console.Write("Type an item number you would like to purchase: ");
     int num = Convert.ToInt32(Console.ReadLine()); // converting string to int
 
     // calculating how much each item costs
+    // using switch expression
     int price = num switch
     {
         // e.g. if user choose 1, then it will be 10 gold for the first item (rope)
@@ -499,6 +500,19 @@ void BuyingAndDiscountedInventory()
         7 => 1,
         _ => -69,// default case
     };
+    // it's like:
+    // int price = 0; // initializing the variable
+    // switch(num)
+    // {
+    // case 1:
+    //   price = 10;
+    //   break;
+    // .... (case 2, 3, 4...) and price is getting changed with each case (number user entered = an item he'd like to buy)
+    // }
+    // 
+
+
+
 
     if(price == -69) // checking if default case gets executed
     {
@@ -528,8 +542,9 @@ void BuyingAndDiscountedInventory()
         Console.WriteLine($"Discount has been applied. Now, {nameOfAnItem} costs {discountPrice} gold for you!");
         Console.WriteLine($"Original price: {price}");
     }
-    else // if the name is something else except Mete
+    else // if the user's name is something else 
     {
         Console.WriteLine($"{nameOfAnItem} costs {price} gold!"); // no discount, average price
     }
 }
+
