@@ -514,7 +514,7 @@ void BuyingAndDiscountedInventory()
 
 
 
-    if(price == -69) // checking if default case gets executed
+    if (price == -69) // checking if default case gets executed
     {
         Console.WriteLine("Sorry, there is no such item avaliable in our shop");
         return; // exiting the whole method
@@ -554,10 +554,11 @@ Console.ReadKey(true);
 Console.Clear(); // clears the window
 
 // Level 11 (Loops)
+// WHILE LOOP
 int barbaz = 10;
-while(barbaz <= 20) // as long as this condition is true, things that are inside curly brackets will get repeated
+while (barbaz <= 20) // 10 <= 20 , 11 <= 20 ...21 <= 20 (loop stops) 
 {
-    Console.WriteLine($"This is {barbaz}"); // prrints out the number in the console
+    Console.WriteLine($"This is {barbaz}"); // prints out the number in the console
     barbaz++; // each time, variable gets increased by 1
     // 10 + 1 = 11 (now barbaz is 11, and still this condition is true!) 10 <= 20
 }
@@ -566,9 +567,32 @@ void PracticingLoops()
 {
     int playersNumber = -1;
 
-    while (playersNumber < 0 || playersNumber > 10)
+    while (playersNumber < 0 || playersNumber > 10) // while (true), we have created "playersNumber"
+                                                    // to make the condtion inside the parentheses true
     {
         Console.Write("Enter a number between 0 and 10: ");
         int aNumber = Convert.ToInt32(Console.ReadLine()); // converting string to int
+        if (aNumber > 0 && aNumber < 10)
+        {
+            return; // exit the method
+        }
     }
+}
+
+// The DO/WHILE LOOP
+DoWhileLoop();
+/// <summary>
+/// do/while loops guarantee that this or that code block will be executed at least once
+/// unlike while
+/// </summary>
+void DoWhileLoop()
+{
+    int playersNum = 0;
+
+    do // ensures that the question will be asked at least once
+    {
+        Console.Write("Enter a number between 20 and 30: ");
+        playersNum = Convert.ToInt32(Console.ReadLine());
+    }
+    while (playersNum < 20 || playersNum > 30); // at the end, checking playersNum
 }
