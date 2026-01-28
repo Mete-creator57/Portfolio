@@ -22,7 +22,8 @@ Console.Title = "All the Challenges"; // console window title
 WhileLoop();
 PracticingWhileLoop();
 DoWhileLoop();
-
+ForLoop();
+BreakAndContinue();
 
 
 #region Level 3,4,6, Var
@@ -525,7 +526,7 @@ void SwitchExpressionPractice()
     Console.WriteLine(color);
 }
 
-Console.Clear();
+
 
 
 
@@ -612,9 +613,6 @@ void BuyingAndDiscountedInventory()
         Console.WriteLine($" Item \"{nameOfAnItem}\" costs {price} gold!"); // no discount, average price
     }
 }
-
-
-Console.Clear(); // clears the window
 #endregion
 
 #region Loops 11 Level
@@ -674,4 +672,48 @@ void DoWhileLoop() // often used for input validation like here
                                                 // until a number in the range is typed
 
 }
+
+void ForLoop()
+{
+    for (int x = 10; x <= 31; x++) // initializing the variable, x has to be less or equal to 31
+                                   // each time x is being increased by 1
+    {
+        Console.WriteLine(x); // prints out x, goes until x is 31
+    }
+    //  for (; ; ) // an alternative to while (true)...
+    //  {
+    //   Console.WriteLine("Endless loop"); 
+    // }
+}
+void BreakAndContinue()
+{
+    while (true) // endless loop by default
+    {
+        Console.Write("Type a number you like: ");
+        string response = Console.ReadLine();
+
+        // if user types one of those in the console, exit the while loop
+        if(response == "quit" || response == "exit" || response == "stop")
+        {
+            Console.WriteLine("Programm is stopped"); // the only way to exit the loop
+            break; // exits the loop
+        }
+        int favNum = Convert.ToInt32(response); // converting string to int
+        switch (favNum)
+        {
+            case 67:
+                Console.WriteLine("This number is strange. Pick another one");
+                continue; // goes back to the beginning of the loop (starts the loop again)
+        }
+        // code that will be executed, if user typed something else except 67
+        // basically, if continue doesn't work
+        Console.WriteLine($"I like every number except \"67\". I like {favNum}!");
+        
+    }
+}
+
+
+
+
+
 #endregion
