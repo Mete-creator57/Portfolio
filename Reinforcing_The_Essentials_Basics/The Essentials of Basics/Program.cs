@@ -1,29 +1,36 @@
 ﻿
 Console.Title = "All the Challenges"; // console window title
 
-// ConsoleBasics(); // calling the method
+/* ----------------------------------------------------
+ * ---------------- CALLING METHODS ---------------------
 
-// Comments();
-// VarKeyword(); // calling the method
+ ConsoleBasics(); // calling the method
 
-// ComputingTriangleArea(); // calling the method
-// TheFourSistersAndTheDuckbear();
+ Comments();
+ VarKeyword(); // calling the method
 
-// TheDominionOfKings(); // calling the method
-// DefenseOfConsolas();
+ComputingTriangleArea(); // calling the method
+ TheFourSistersAndTheDuckbear();
 
-// SwitchStatements();
-// PracticingSwitchStatements();
-// PracticingSwitchesAgain();
-// MultipleCasesTheSameArm(); // calling the method
-// SwitchExpressionPractice(); // calling the method
-// BuyingAndDiscountedInventory(); // calling the method
+ TheDominionOfKings(); // calling the method
+DefenseOfConsolas();
 
-WhileLoop();
+ SwitchStatements();
+ PracticingSwitchStatements();
+ PracticingSwitchesAgain();
+ MultipleCasesTheSameArm(); // calling the method
+ SwitchExpressionPractice(); // calling the method
+ BuyingAndDiscountedInventory(); // calling the method */
+
+
+
+/* WhileLoop();
 PracticingWhileLoop();
 DoWhileLoop();
 ForLoop();
 BreakAndContinue();
+MultiplicationOfChosenNumber(); */
+NestingLoops();
 
 
 #region Level 3,4,6, Var
@@ -693,7 +700,7 @@ void BreakAndContinue()
         string response = Console.ReadLine();
 
         // if user types one of those in the console, exit the while loop
-        if(response == "quit" || response == "exit" || response == "stop")
+        if (response == "quit" || response == "exit" || response == "stop")
         {
             Console.WriteLine("Programm is stopped"); // the only way to exit the loop
             break; // exits the loop
@@ -708,10 +715,54 @@ void BreakAndContinue()
         // code that will be executed, if user typed something else except 67
         // basically, if continue doesn't work
         Console.WriteLine($"I like every number except \"67\". I like {favNum}!");
-        
+
+    }
+}
+// Multiplacation 
+void MultiplicationOfChosenNumber()
+{
+    Console.WriteLine("This little game is going to show you a basic multiplication table based on your number.");
+    Console.Write("Type a random number: ");
+    // converting string to int
+    int chosenNumber = int.Parse(Console.ReadLine());
+
+    // this loop gets repeated 10 times (each time "s" is increased by 1 until "s" is 10)
+    for (int s = 1; s <= 10; s++)
+    {
+        // e.g. 6(nUmber) * 1(s) = 6
+        Console.WriteLine($"{chosenNumber} * {s} = {chosenNumber * s}");
+        // here the loop ends, going back to the start again (now s = 2);
     }
 }
 
+/// <summary>
+/// first turn: "f" loop is being 1, internal loop starts executing all of it's iterations
+/// so basically, f = 1 => g = 1, g = 2, g = 3... g = 10 (stop executing)
+/// so we have 10 lines written by now. 2nd turn: f becomes 2
+/// f = 2 => g = 1, g = 2, g = 3... g = 10
+/// 3rd turn: now f is 3, and g loop starts and goes until it becomes 10 again
+/// we have 30 lines by now... 
+/// "f" (external loop) decides how many iterations there will be for "g" (internal loop)
+/// without "f" external loop  "g" would print only 10 lines in the console and that's it
+/// </summary>
+void NestingLoops()
+{
+    for (int f = 1; f <= 10; f++)
+    {
+        Console.WriteLine($"Table for: {f}");
+
+        for (int g = 1; g <= 10; g++) 
+        {
+            // 1 * 1 = 1, 1 * 2 = 2.... 1 * 10 = 10
+            // 2 * 1 = 2, 2 * 2 = 4
+            Console.WriteLine($"{f} * {g} = {f * g}");
+            // external loop * internal loop
+        }
+        // when internal loop (g) ends it goes back to the external loop (f) and continues
+        // leaves some space for convinience after multiplication table
+        Console.WriteLine(); 
+    }
+}
 
 
 
