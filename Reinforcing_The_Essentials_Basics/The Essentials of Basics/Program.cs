@@ -30,9 +30,10 @@ DoWhileLoop();
 ForLoop();
 BreakAndContinue();
 MultiplicationOfChosenNumber(); */
- // NestingLoops();
+// NestingLoops();
 // RowsAndColumns();
-ThePrototype();
+// ThePrototype();
+MagicCannon();
 
 
 #region Level 3,4,6, Var
@@ -825,7 +826,7 @@ void ThePrototype()
         if (guessedNumber < pickedNumber)
         {
             Console.WriteLine($"{guessedNumber} is too low");
-            continue; // going back to the start
+            continue; // going back to the start (and asking the same question again)
         }
         else if (guessedNumber > pickedNumber)
         {
@@ -841,6 +842,46 @@ void ThePrototype()
     }
 
 }
+/// <summary>
+/// currentTurn = 1 => average blast (else block) 
+/// and then the loop ends and goes back to the start. now currentTurn = 2
+/// every time loop goes back to it's beggining until it reaches 100. 
+/// currentTurn (turn number) increases by 1 each time (100 iterations)
+/// when it reaches 100 the loop stops
+/// </summary>
+void MagicCannon()
+{
+    for (int currentTurn = 1; currentTurn <= 100; currentTurn++)
+    {
+        // if turn number can be divided by 3 and 5 without a remainder
+        if (currentTurn % 3 == 0 && currentTurn % 5 == 0) // fire + electricity
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"{currentTurn}: Combined Blast");
+        }
 
+        else if (currentTurn % 3 == 0) // fire
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"{currentTurn}: Fire Blast");
+        }
+
+        else if (currentTurn % 5 == 0) // electricity
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine($"{currentTurn}: Electric Blast");
+        }
+
+        else // average blast
+        {
+            Console.WriteLine($"{currentTurn}: Normal Blast");
+        }
+        // after all of the code blocks,each time setting color back to default
+        // regardless of what the colors were before
+        Console.ResetColor();
+
+        // TODO: practice with nested loops a bit
+    }
+}
 
 #endregion
