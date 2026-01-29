@@ -30,7 +30,9 @@ DoWhileLoop();
 ForLoop();
 BreakAndContinue();
 MultiplicationOfChosenNumber(); */
-NestingLoops();
+ // NestingLoops();
+// RowsAndColumns();
+ThePrototype();
 
 
 #region Level 3,4,6, Var
@@ -583,8 +585,6 @@ void BuyingAndDiscountedInventory()
     // 
 
 
-
-
     if (price == -69) // checking if default case gets executed
     {
         Console.WriteLine("Sorry, there is no such item avaliable in our shop");
@@ -751,7 +751,7 @@ void NestingLoops()
     {
         Console.WriteLine($"Table for: {f}");
 
-        for (int g = 1; g <= 10; g++) 
+        for (int g = 1; g <= 10; g++)
         {
             // 1 * 1 = 1, 1 * 2 = 2.... 1 * 10 = 10
             // 2 * 1 = 2, 2 * 2 = 4
@@ -760,11 +760,87 @@ void NestingLoops()
         }
         // when internal loop (g) ends it goes back to the external loop (f) and continues
         // leaves some space for convinience after multiplication table
-        Console.WriteLine(); 
+        Console.WriteLine();
     }
 }
+void RowsAndColumns()
+{
+    var totalRows = 20; // int variable
+    var totalColumns = 10;
+
+    for (int currentRow = 1; currentRow <= totalRows; currentRow++)
+    {
+        Console.WriteLine($"Row number: {currentRow} ");
+        // currentRow = 1, currentColumn = 1, 2, 3..... 10
+        for (int currentColumn = 1; currentColumn <= totalColumns; currentColumn++)
+        {
+            Console.Write("#");
+        }
+        // without it, there would be no space between rows like this: ##################
+        Console.WriteLine(); // going to the next line (leaving some space)
+
+    }
+}
+// Challenge
+void ThePrototype()
+{
+    Console.Write("User 1, enter a number between 0 and 100: ");
+    string input = Console.ReadLine();
 
 
+    // if user wants to leave
+    if (input == "exit")
+    {
+        Console.WriteLine("Exiting the game...");
+        return;
+    }
+    var pickedNumber = Convert.ToInt32(input); // converting string to int
+
+    Console.Clear();
+
+    for (; ; ) // ENDLESSS LOOP by default like while(true)
+    {
+        Console.Write("User 2, guess and type the number: ");
+        int guessedNumber = Convert.ToInt32(Console.ReadLine()); // converting string to int
+
+
+
+        // checking if user types 1 (error) using switch
+        // EXPERIMENT (overengineering, just practicing with switch expressions!)
+        // we could use if instead but for all negative numbers, not only "-1"
+        // ---------------------------------------------------------
+        string errorMessage = guessedNumber switch
+        {
+            -1 => "User 2, -1 is not in the range... Restart the programm",
+            _ => ""
+        };
+        if (errorMessage != "") // if the value of "errorMessage" is not nothing (if -1 "user 2,...")
+        {
+            Console.WriteLine(errorMessage);
+            return; // exit the whole method
+        }
+
+        // ------------------------------------------------------------
+
+        if (guessedNumber < pickedNumber)
+        {
+            Console.WriteLine($"{guessedNumber} is too low");
+            continue; // going back to the start
+        }
+        else if (guessedNumber > pickedNumber)
+        {
+            Console.WriteLine($"{guessedNumber} is too high");
+            continue;
+        }
+        else
+        {
+            Console.WriteLine($"{guessedNumber} is the perfect match! You won!");
+            break; // exit the loop
+        }
+
+    }
+
+}
 
 
 #endregion
