@@ -33,8 +33,10 @@ MultiplicationOfChosenNumber(); */
 // NestingLoops();
 // RowsAndColumns();
 // ThePrototype();
-MagicCannon();
+// MagicCannon();
+PracticeNestingLoops();
 
+// -------------------------------------------------------------------
 
 #region Level 3,4,6, Var
 
@@ -882,6 +884,46 @@ void MagicCannon()
 
         // TODO: practice with nested loops a bit
     }
-}
 
+
+
+
+}
+/*     H
+     * H E
+     * H E L           => what has to be printed in the console
+     * H E L L
+     * H E L L O    */
+
+/// <summary>
+///     1st TURN:
+/// external loop is 0 , 0 < 5(string length)? Yes, moving inside the external loop
+/// internal loop is 0, 0 <= 0(internal loop <= external loop)? Yes, going inside the internal loop 
+/// then, internal loop prints out someText[0] which stands for the 1st letter "C"
+/// after that internal loop continues working and evaluates to 1 by default (h++)
+/// but now 1 <= 0 becomes false so the internal loop stops (only H is printed in the console rn)
+/// then going back to external loop and moving to the next line
+///     2nd TURN:
+/// external loop is 1 (i++), 1 < 5? Yes, moving inside the external loop
+/// internal loop is 0 , 0 <= 1? Yes, going inside the internal loop
+/// then, internal loop prints someText[0] and the evaluates to 1 because of 1 <= 1 being true and prints someText[1] too
+/// now, C
+///      Ca letters are printed in the console
+///  .... continues until the end
+/// </summary>
+void PracticeNestingLoops()
+{
+    string someText = "Camel"; // initializing the variable
+
+    // 0 < length of the string (in this case 5) 0 < 5
+    // if we made i <= 5 then i would be 5 at the end, which would result someText[5] because of h <= i (5 <= 5)
+    for (int i = 0; i < someText.Length; i++)
+    {
+        for (int h = 0; h <= i; h++) // at the las turn,this will be 4 <= 4 and (someText[4])
+        {
+            Console.Write(someText[h]);
+        }
+        Console.WriteLine();
+    }
+}
 #endregion
