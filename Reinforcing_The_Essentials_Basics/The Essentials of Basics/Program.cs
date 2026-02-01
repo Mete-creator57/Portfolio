@@ -34,7 +34,9 @@ MultiplicationOfChosenNumber(); */
 // RowsAndColumns();
 // ThePrototype();
 // MagicCannon();
-PracticeNestingLoops();
+// PracticeNestingLoops();
+
+ArraysBasics();
 
 // -------------------------------------------------------------------
 
@@ -926,4 +928,60 @@ void PracticeNestingLoops()
         Console.WriteLine();
     }
 }
+#endregion
+
+#region Arrays 12 Level
+
+/// <summary>
+/// Experiment: This code block is made for practice,
+/// some features may not work properly or throw some errors in the console
+/// Heap > Stack
+/// Features: If we don't initialize arrays then each value in an array is 0 (new int[5]) 
+/// 
+/// </summary>
+void ArraysBasics()
+{
+
+
+    // "new" keyword is used for allocating memory on the Heap
+    // because we're not sure how many bytes should be reserved for numbers in arrays
+    // e.g. user might select 1000 or more, and the Heap would have to allocate 4000 bytes for numbers
+    int[] array = new int[4]; // user can choose size of the array himself
+
+    array[0] = 67; // index 0 stores the number 67 in it
+    array[1] = 77;
+    array[1 + 1] = 34; // index 2 stores the number 34
+    Console.WriteLine($"3rd index: {array[2]} ");
+    // prints how long the array is
+    Console.WriteLine(array.Length); // (how many values it can store)
+
+
+    // --------------------------------------------------
+
+    Console.Write("Type the size of an array: ");
+    int size = Convert.ToInt32(Console.ReadLine());
+
+    // creating an array with size user selected (e.g. 5)
+    int[] someArray = new int[size]; 
+
+    // 1st turn: index is 0, 0 < 5, true; going inside the loop
+    for(int index = 0; index < someArray.Length; index++)
+    {
+        // someArray[0] = 1
+        // then printing out someArray[0] which is 1
+        // then it starts all over again, index evaluates all way to 1,2...4
+        someArray[index] = 1;
+        Console.WriteLine(someArray[index]); // every number in the array is 1
+    }
+
+
+
+
+}
+
+
+
+
+
+
 #endregion
