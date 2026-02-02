@@ -36,7 +36,8 @@ MultiplicationOfChosenNumber(); */
 // MagicCannon();
 // PracticeNestingLoops();
 
-ArraysBasics();
+// ArraysBasics();
+Ranges();
 
 // -------------------------------------------------------------------
 
@@ -962,14 +963,16 @@ void ArraysBasics()
     int size = Convert.ToInt32(Console.ReadLine());
 
     // creating an array with size user selected (e.g. 5)
-    int[] someArray = new int[size]; 
+    int[] someArray = new int[size];
 
     // 1st turn: index is 0, 0 < 5, true; going inside the loop
-    for(int index = 0; index < someArray.Length; index++)
+    // this loop will continue until index(counter) reaches the end of an array
+    // (user decides how many values an array can store)
+    for (int index = 0; index < someArray.Length; index++)
     {
         // someArray[0] = 1
         // then printing out someArray[0] which is 1
-        // then it starts all over again, index evaluates all way to 1,2...4
+        // then it starts all over again, index evaluates all way to 1,2...the last number
         someArray[index] = 1;
         Console.WriteLine(someArray[index]); // every number in the array is 1
     }
@@ -979,7 +982,34 @@ void ArraysBasics()
 
 }
 
+///<summary>
+/// the 1st number in [0..9] is the index to start at
+/// the last number here is the index to end at (not included)
+/// so there will be only numbers which indexes are between 0 and 9 (9 not included)
+/// </summary>
+void Ranges()
+{
+    int[] anArray = new int[5]; // this array can store 5 values
+                                // changing the size of the array
+    anArray = new int[10];
+    anArray[0] = 678;
+    anArray[1] = 888;
+    // .... and so on
+    anArray[9] = 99;
+    // indexing from the end
+    int lastNumber = anArray[^1]; // like: lastNumber = anArray[9]
+    Console.WriteLine(lastNumber); // prints 99
 
+    // --------- RANGES (..) range operator ---------
+    // creating a new array and assign the first 4 numbers of another array to it
+    int[] firstFourNums = anArray[0..4];
+
+    int[] fromMiddleToEnd = anArray[4..10]; // ranges replace this: anArray[4..anArray.Length];
+    // or we can do this instead:
+    int[] fromMiddleToEnd1 = anArray[4..]; // takes numbers from 4 to the end (9)
+    // syntax sugar
+
+}
 
 
 
