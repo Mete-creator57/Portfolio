@@ -13,7 +13,10 @@ ComputingTriangleArea(); // calling the method
  TheFourSistersAndTheDuckbear();
 
  TheDominionOfKings(); // calling the method
+
 DefenseOfConsolas();
+
+
 
  SwitchStatements();
  PracticingSwitchStatements();
@@ -37,8 +40,8 @@ MultiplicationOfChosenNumber(); */
 // PracticeNestingLoops();
 
 // ArraysBasics();
-Ranges();
-
+// Ranges();
+AlignmentAndFormatting();
 // -------------------------------------------------------------------
 
 #region Level 3,4,6, Var
@@ -298,8 +301,60 @@ void OperatorsLikeSqrtAndMathF()
 #region Console 2.0
 
 
-// Level 8 (Console 2.0) Challenge
+/// <summary>
+/// Understanding Custom Numeric Format Strings:
+/// "0" (Zero placeholder): Replaces the zero with the corresponding digit if one is present; 
+/// otherwise, appears as a zero. It ensures fixed precision.
+/// "#" (Digit placeholder): Replaces the "#" symbol with the corresponding digit if one is present; 
+/// otherwise, no digit appears. It hides insignificant zeros.
+/// Summary: If there is 0 , 0.000 format will show it in the console (e.g. 45.20) 
+/// If there is 0, #.### format will not show it in the console (e.g. 45.2)
+/// </summary>
+void AlignmentAndFormatting()
+{
+    // Alignment
+    string[] ceoNames = new[] { "Steve Jobs", "Tim Cook", "Jeff Bezos", "Elon Musk" }; // creating an array to hold diff string values
+    // variableName , desired length of whitespace
+    Console.WriteLine($"1st: | {ceoNames[0],10}"); // leaving whitespace BEFORE the desired word
+    Console.WriteLine($"2nd: | {ceoNames[1],10}");
+    Console.WriteLine($"{ceoNames[2],-10} => 3rd"); // leaving whitespace AFTER the desired word
+    Console.WriteLine($"{ceoNames[3],-10} => 4th");
 
+    // ------------ Formatting --------
+    // => determines how numbers appear (e.g. 67.000 => if we used #.## format there would be printed 67 ) removes unnecessary 0s
+    // using a format string of 000.000 
+    double someNum = 67.9959404950;
+
+    // 0.000. Zeros after the decimal place show how many digits should be printed after (.)
+    Console.WriteLine($"{someNum:0.000} using 0.000 format");
+    Console.WriteLine($"{45.65554:0.000} using 0.000 format");
+
+    // to use this, there should be interpolation involved
+    Console.WriteLine($"{Math.PI:0.000} using 0.000 format");
+
+
+    // in contrast, #.### format might be more useful if we don't want 0s to appear (if we don't want things like 45.0)
+    Console.WriteLine($"{456.600034:#.##} using #.## format");
+    Console.WriteLine($"{456.600034:0.00} using 0.00 format");
+
+    Console.WriteLine($"{677.0000:0.00}"); // prints 677.00
+    Console.WriteLine($"{677.0000:#.##}"); // prints only 677 (without 0s)
+
+    // we can use 0.0% format as well
+    double currentHealth = 10;
+    double maxHealth = 100;
+    Console.WriteLine(currentHealth / maxHealth); // fractional value (0.1)
+    Console.WriteLine($"Your current health is: {currentHealth / maxHealth:0.0%}"); // value as percent (10%)
+
+    // using 0.0% format
+    double totalLoveRate = 200;
+    Console.Write("Rate your love for Berg on a scale of 200: ");
+    double currentLoveRate = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine($"Your current love rate is: {currentLoveRate / totalLoveRate:0.0%}");
+
+
+}
+// Level 8 (Console 2.0) Challenge
 void DefenseOfConsolas()
 {
     // the main idea is to surround the fireball (bomb) and disarm it
@@ -1010,8 +1065,17 @@ void Ranges()
     // syntax sugar
 
 }
+void OtherWaysToCreateArrays()
+{
+    // length and the number of values must match each other
+    int[] numbers = new int[5] { 5, 6, 7, 8, 9 };
+    int[] numbers1 = new int[] { 5, 6, 7, 8, 9 };
+    int[] numbers2 = new[] { 5, 6, 7, 8, 9 }; // compiler is smart enough to get what type the array is
+}
+void SomeExamplesWithArrays()
+{
 
-
+}
 
 
 #endregion
