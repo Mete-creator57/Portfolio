@@ -320,13 +320,14 @@ void AlignmentAndFormatting()
     Console.WriteLine($"{ceoNames[2],-10} => 3rd"); // leaving whitespace AFTER the desired word
     Console.WriteLine($"{ceoNames[3],-10} => 4th");
 
-    // ------------ Formatting --------
-    // => determines how numbers appear (e.g. 67.000 => if we used #.## format there would be printed 67 ) removes unnecessary 0s
+    // ------------ FORMATTING --------
+    // => determines how numbers appear (e.g. 67.000 => if we used #.### format there would be printed 67 ) removes unnecessary 0s
+
     // using a format string of 000.000 
     double someNum = 67.9959404950;
 
     // 0.000. Zeros after the decimal place show how many digits should be printed after (.)
-    Console.WriteLine($"{someNum:0.000} using 0.000 format");
+    Console.WriteLine($"{someNum:0.000} using 0.000 format"); // on;y 3 numbers after decimal place will be shown
     Console.WriteLine($"{45.65554:0.000} using 0.000 format");
 
     // to use this, there should be interpolation involved
@@ -348,9 +349,22 @@ void AlignmentAndFormatting()
 
     // using 0.0% format
     double totalLoveRate = 200;
-    Console.Write("Rate your love for Berg on a scale of 200: ");
-    double currentLoveRate = Convert.ToDouble(Console.ReadLine());
+    double currentLoveRate = 0;
+    Console.Write("Rate your love for Mete on a scale of 200: ");
+    string response = Console.ReadLine();
+
+    if (response == "I do not love him")
+    {
+        currentLoveRate = 0;
+        Console.WriteLine($"{currentLoveRate:0.0%}"); // prints 0 but in percent (0%)
+        return; // exiting the whole method
+    }
+
+    currentLoveRate = Convert.ToDouble(response);
     Console.WriteLine($"Your current love rate is: {currentLoveRate / totalLoveRate:0.0%}");
+
+
+
 
 
 }
