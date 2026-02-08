@@ -1078,6 +1078,9 @@ void Ranges()
     int[] fromMiddleToEnd1 = anArray[4..]; // takes numbers from 4 to the end (9)
     // syntax sugar
 
+    int[] fromThirdToSixth = anArray[2..6]; // 6 is not included
+    int[] fromSecondToEnd = anArray[1..];
+    
 }
 void OtherWaysToCreateArrays()
 {
@@ -1085,6 +1088,14 @@ void OtherWaysToCreateArrays()
     int[] numbers = new int[5] { 5, 6, 7, 8, 9 };
     int[] numbers1 = new int[] { 5, 6, 7, 8, 9 };
     int[] numbers2 = new[] { 5, 6, 7, 8, 9 }; // compiler is smart enough to get what type the array is
+
+    int[] numbers3 = { 5, 6, 7, 8, 9 }; // syntax sugar => compiler looks at the numbers in
+                                        // an array and guesses the type automatically
+                                        // compiler also computes how many values in an array
+                                        // and allocates space for them itself (new int[5])
+
+    // guessing the type of an array by using keyword "var"
+    var numbers4 = new[] { 5, 6, 7, 8, 9 }; 
 }
 void SomeExamplesWithArrays()
 {
