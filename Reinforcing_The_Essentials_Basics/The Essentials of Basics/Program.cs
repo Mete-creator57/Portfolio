@@ -1096,6 +1096,7 @@ void OtherWaysToCreateArrays()
 
     // guessing the type of an array by using keyword "var"
     var numbers4 = new[] { 5, 6, 7, 8, 9 }; 
+    // something
 }
 void SomeExamplesWithArrays()
 {
