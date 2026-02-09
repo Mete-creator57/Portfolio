@@ -1,4 +1,6 @@
 ﻿
+using System.Drawing;
+
 Console.Title = "All the Challenges"; // console window title
 
 /* ----------------------------------------------------
@@ -15,7 +17,7 @@ ComputingTriangleArea(); // calling the method
  TheDominionOfKings(); // calling the method
 
 DefenseOfConsolas();
-
+AlignmentAndFormatting();
 
 
  SwitchStatements();
@@ -41,7 +43,8 @@ MultiplicationOfChosenNumber(); */
 
 // ArraysBasics();
 // Ranges();
-AlignmentAndFormatting();
+
+SomeExamplesWithArrays();
 // -------------------------------------------------------------------
 
 #region Level 3,4,6, Var
@@ -1080,7 +1083,7 @@ void Ranges()
 
     int[] fromThirdToSixth = anArray[2..6]; // 6 is not included
     int[] fromSecondToEnd = anArray[1..];
-    
+
 }
 void OtherWaysToCreateArrays()
 {
@@ -1095,13 +1098,73 @@ void OtherWaysToCreateArrays()
                                         // and allocates space for them itself (new int[5])
 
     // guessing the type of an array by using keyword "var"
-    var numbers4 = new[] { 5, 6, 7, 8, 9 }; 
+    var numbers4 = new[] { 5, 6, 7, 8, 9 };
     // something
 }
+///<summary>
+/// This first example calculates the minimum value in an array.
+/// 
+/// </summary>
 void SomeExamplesWithArrays()
 {
+    Console.Write("Type size of an array: ");
+    string response = Console.ReadLine();
 
+    if (response == "exit" || response == "stop")
+    {
+        Console.WriteLine("The programm has been stopped");
+        return; // exit the whole method
+    }
+    else if (response == " ")
+    {
+        Console.WriteLine("We don't accept text. Restart the programm and enter a numeric value");
+        return;
+    }
+
+    int arrSize = Convert.ToInt32(response);
+
+    if (arrSize < 2)
+    {
+        Console.WriteLine("Invalid input. Array's size can not be less than 2, that makes no sense");
+        Console.Write("Press any key to end the programm: ");
+        Console.ReadKey(true);
+        return;
+    }
+
+    // array's length = arrSize (user chooses the size of an array himself)
+    int[] arr = new int[arrSize];
+
+    // PUTTING NUMBERS INTO THE ARRAY
+    for (int index = 0; index < arrSize; index++) // at the end it will be 8 < 9
+    {
+        // arr[0] = (0 + 1) * 5 => 5  1st TURN , now arr[0] is 5
+        // arr[1] = 2 * 5 = 10 2nd TURN
+        // and so on until counter(index) reaches array's size (be 1 less than array's size)
+
+        arr[index] = (index + 1) * 5;  // 5, 10, 15.. goes until the last number in array
+
+    }
+    // !!! numbers in the array get changed even if they're getting changed in loops !!!
+    // e.g. initially, if arr[0] was 0 and it evaluates to 7, then arr[0] becomes 7 as well!
+    Console.WriteLine($"Array of size {arrSize} created and filled:");
+
+    // Calculating the biggest number in the created array (depending on it's size which is selected by the user)
+
+    int currentBiggest = int.MinValue;
+    for(int counter = 0; counter < arrSize; counter++)
+    {
+        if (arr[counter] > currentBiggest) // if an element is bigger than the previous one
+        {
+            currentBiggest = arr[counter]; // then this element becomes the biggest itself
+
+        }
+        Console.WriteLine($"Current biggest number in the array is: {currentBiggest}");
+    }
+    
 }
+
+
+
 
 
 #endregion
