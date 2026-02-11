@@ -1093,17 +1093,18 @@ void OtherWaysToCreateArrays()
     int[] numbers2 = new[] { 5, 6, 7, 8, 9 }; // compiler is smart enough to get what type the array is
 
     int[] numbers3 = { 5, 6, 7, 8, 9 }; // syntax sugar => compiler looks at the numbers in
-                                        // an array and guesses the type automatically
-                                        // compiler also computes how many values in an array
+                                        // the array and guesses the type automatically.
+                                        // Compiler also computes how many values in an array
                                         // and allocates space for them itself (new int[5])
 
-    // guessing the type of an array by using keyword "var"
+    // guessing the type of an array by using the keyword "var"
     var numbers4 = new[] { 5, 6, 7, 8, 9 };
-    // something
+    
 }
 ///<summary>
-/// This first example calculates the minimum value in an array.
-/// 
+/// This example calculates the max value in an array.
+/// numbers in the array get changed in loops, when a loop ends numbers change dependion on what we have done in loops
+/// e.g. initially, if arr[0] was 0 and it evaluates to 7, then after the loop ends arr[0] remains 0
 /// </summary>
 void SomeExamplesWithArrays()
 {
@@ -1144,16 +1145,17 @@ void SomeExamplesWithArrays()
         arr[index] = (index + 1) * 5;  // 5, 10, 15.. goes until the last number in array
 
     }
-    // !!! numbers in the array get changed even if they're getting changed in loops !!!
-    // e.g. initially, if arr[0] was 0 and it evaluates to 7, then arr[0] becomes 7 as well!
+  
     Console.WriteLine($"Array of size {arrSize} created and filled:");
 
     // Calculating the biggest number in the created array (depending on it's size which is selected by the user)
 
-    int currentBiggest = int.MinValue;
+    // e.g. 10 > int's minValue (-...) then the max value becomes 10
+    int currentBiggest = int.MinValue; // we use minValue to ensure that the first number in the array will be greater than anything
+
     for(int counter = 0; counter < arrSize; counter++)
     {
-        if (arr[counter] > currentBiggest) // if an element is bigger than the previous one
+        if (arr[counter] > currentBiggest) // if an element in the array is greater than the previous one
         {
             currentBiggest = arr[counter]; // then this element becomes the biggest itself
 
