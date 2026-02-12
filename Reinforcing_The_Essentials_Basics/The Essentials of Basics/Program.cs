@@ -1,7 +1,7 @@
 ﻿
 using System.Drawing;
 
-Console.Title = "All the Challenges"; // console window title
+Console.Title = "All the Essentials"; // console window title
 
 /* ----------------------------------------------------
  * ---------------- CALLING METHODS ---------------------
@@ -9,23 +9,26 @@ Console.Title = "All the Challenges"; // console window title
  ConsoleBasics(); // calling the method
 
  Comments();
- VarKeyword(); // calling the method
+ VarKeyword(); // calling the method */
+// Mathematics();
 
-ComputingTriangleArea(); // calling the method
- TheFourSistersAndTheDuckbear();
+// ComputingTriangleArea(); // calling the method
+//  TheFourSistersAndTheDuckbear();
 
- TheDominionOfKings(); // calling the method
+// TheDominionOfKings(); // calling the method
+// PrefixPostfixNotations();
+//  OperatorsLikeSqrtAndMathF();
 
-DefenseOfConsolas();
-AlignmentAndFormatting();
+// DefenseOfConsolas();
+// AlignmentAndFormatting();
 
 
- SwitchStatements();
- PracticingSwitchStatements();
- PracticingSwitchesAgain();
- MultipleCasesTheSameArm(); // calling the method
- SwitchExpressionPractice(); // calling the method
- BuyingAndDiscountedInventory(); // calling the method */
+// SwitchStatements();
+// PracticingSwitchStatements();
+// PracticingSwitchesAgain();
+// MultipleCasesTheSameArm(); // calling the method
+// SwitchExpressionPractice(); // calling the method
+// BuyingAndDiscountedInventory(); // calling the method */
 
 
 
@@ -44,7 +47,7 @@ MultiplicationOfChosenNumber(); */
 // ArraysBasics();
 // Ranges();
 
-SomeExamplesWithArrays();
+// SomeExamplesWithArrays();
 // -------------------------------------------------------------------
 
 #region Level 3,4,6, Var
@@ -77,6 +80,7 @@ void Comments()
 
     string c = "of Doom";
     string d = "3000";
+    // using concatenation
     Console.WriteLine("The " + b + " " + a + " " + c + " " + d + "!"); // the old method to represent variables with strings in a sentence
 }
 
@@ -88,7 +92,7 @@ byte variable3 = 255;
 long variable4 = 24333;
 // and so on...
 
-// "var" keyword
+
 ///<summary>
 /// "var" keyword can be used only if compiler is sure of type of the variable
 /// in this case, compiler undertands that "input" variable is an int type because we convert string to int later on
@@ -97,7 +101,7 @@ long variable4 = 24333;
 void VarKeyword()
 {
     Console.WriteLine("What is your age, stranger?");
-    var input = Convert.ToInt32(Console.ReadLine()); // converting string to int using "var" keyword
+    var input = Convert.ToInt32(Console.ReadLine()); // converting string to int by using "var" keyword
     Console.WriteLine($"You are {input} years old!");
 }
 #endregion 
@@ -109,15 +113,27 @@ void VarKeyword()
 void Mathematics()
 {
     // both min and max values for int 
-    int maxNumber = int.MaxValue;
-    int minNumber = int.MinValue;
+    int maxNum = int.MaxValue;
+    int minNum = int.MinValue;
 
     // only "double" and "float" types can define a value for both negative infinity and positive infinity (expect decimal)
-    double infinity = double.PositiveInfinity;
-    float infinity1 = float.NegativeInfinity;
+    double infinity = double.PositiveInfinity; // displays infinity
+    float forever = float.NegativeInfinity; // displays infinity
 
-    // NaN (not a number) can be used only by "float" and "double" types as well
+    Console.WriteLine(infinity);
+    Console.WriteLine(forever);
+
+    // NaN (not a number) can be used only by "float" and "double" types 
     float notARealNumber = float.NaN;
+    Console.WriteLine(notARealNumber);
+
+    int g = 5;
+    g -= 2; // equvilant of g = g - 2 but much shorter
+
+    // increment and decrement operators
+    g++; // the same as g = g + 1; or g += 1;
+    g--;
+
 }
 
 
@@ -125,11 +141,11 @@ void ComputingTriangleArea()
 {
     Console.WriteLine("Both length and width will be represented in cm");
     Console.Write("Enter the base: ");
-    var basee = int.Parse(Console.ReadLine()); // converting string to int
+    var theBase = int.Parse(Console.ReadLine()); // converting string to int
     Console.Write("Enter the height: ");
     var height = Convert.ToInt32(Console.ReadLine()); // parsing string to int
 
-    int area = basee * height / 2; // computing area based on what user has typed
+    int area = theBase * height / 2; // computing an area based on what user has typed
     Console.WriteLine($"The triangle area is {area} ");
 
 }
@@ -154,12 +170,7 @@ void TheFourSistersAndTheDuckbear()
 
 
 }
-int g = 5;
-g -= 2; // equvilant of g = g - 2 but much shorter
 
-// increment and decrement operators
-g++; // the same as g = g + 1; or g += 1;
-g--;
 
 
 void TheDominionOfKings()
@@ -214,7 +225,7 @@ void PrefixPostfixNotations()
                         // RESULT: Both bar and bazbar are 46
 }
 
-void WorkingWithDiffTypesAndCasting()
+void DiffTypesAndCasting()
 {
     // WORKING WITH DIFFERENT TYPES AND CASTING
 
@@ -297,7 +308,7 @@ void OperatorsLikeSqrtAndMathF()
                                 // RULE: Int truncates(removes) anything that comes after "." and turns numbers into integers
     Console.WriteLine(anthing);
 
-    Console.Clear(); // clears the window
+    
 }
 #endregion
 
@@ -404,7 +415,7 @@ void DefenseOfConsolas()
     Console.Write("Press any key to continue: ");
     Console.ReadKey(true);
 
-    Console.Clear();
+ 
 }
 #endregion
 
@@ -753,7 +764,7 @@ void DoWhileLoop() // often used for input validation like here
         playersNum = Convert.ToInt32(Console.ReadLine()); // convert string to int and assign whatever value user types to playerNum(if it's int)
     }
     while (playersNum < 20 || playersNum > 30); // at the end of the first iteration, checking playersNum
-                                                // if its greater than 30 and less than 20, question will be asked again
+                                                // and if its greater than 30 and less than 20, question will be asked again
                                                 // until a number in the range is typed
 
 }
@@ -796,13 +807,15 @@ void BreakAndContinue()
 
     }
 }
-// Multiplacation 
+// Multiplication 
 void MultiplicationOfChosenNumber()
 {
-    Console.WriteLine("This little game is going to show you a basic multiplication table based on your number.");
+    Console.WriteLine("This little game is going to show you a basic multiplication table of a number you select.");
+    Console.WriteLine("Multiplication table is only until 10");
     Console.Write("Type a random number: ");
     // converting string to int
-    int chosenNumber = int.Parse(Console.ReadLine());
+    string response = Console.ReadLine();
+    var chosenNumber = Convert.ToInt32(response);
 
     // this loop gets repeated 10 times (each time "s" is increased by 1 until "s" is 10)
     for (int s = 1; s <= 10; s++)
@@ -1163,6 +1176,8 @@ void SomeExamplesWithArrays()
         Console.WriteLine($"Current biggest number in the array is: {currentBiggest}");
     }
     
+
+
 }
 
 
