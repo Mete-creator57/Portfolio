@@ -814,7 +814,8 @@ void MultiplicationOfChosenNumber()
     Console.WriteLine("Multiplication table is only until 10");
     Console.Write("Type a random number: ");
     // converting string to int
-    var chosenNumber = int.Parse(Console.ReadLine());
+    string response = Console.ReadLine();
+    var chosenNumber = Convert.ToInt32(response);
 
     // this loop gets repeated 10 times (each time "s" is increased by 1 until "s" is 10)
     for (int s = 1; s <= 10; s++)
