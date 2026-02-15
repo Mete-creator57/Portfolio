@@ -1223,7 +1223,7 @@ void ArraysLoopsExperiment()
     int value;
 
     // used for initializing the values (user decides)
-    for (int index = 0; index < size; index++)
+    for (int index = 0; index < array.Length; index++)
     {
         Console.Write($"Initialize the int value at index [{index}]: ");
         value = Convert.ToInt32(Console.ReadLine());
@@ -1235,7 +1235,7 @@ void ArraysLoopsExperiment()
 
     }
     // used for counting values
-    for (int index = 0; index < size; index++)
+    for (int index = 0; index < array.Length; index++)
     {
         Console.WriteLine($"Index: {index}, element: {array[index]}");
     }
