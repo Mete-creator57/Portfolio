@@ -1,7 +1,4 @@
-﻿
-using System.Drawing;
-
-Console.Title = "All the Essentials"; // console window title
+﻿Console.Title = "All the Essentials"; // console window title
 
 /* ----------------------------------------------------
  * ---------------- CALLING METHODS ---------------------
@@ -48,6 +45,7 @@ MultiplicationOfChosenNumber(); */
 // Ranges();
 
 // SomeExamplesWithArrays();
+ArraysLoopsExperiment();
 // -------------------------------------------------------------------
 
 #region Level 3,4,6, Var
@@ -308,7 +306,7 @@ void OperatorsLikeSqrtAndMathF()
                                 // RULE: Int truncates(removes) anything that comes after "." and turns numbers into integers
     Console.WriteLine(anthing);
 
-    
+
 }
 #endregion
 
@@ -415,7 +413,7 @@ void DefenseOfConsolas()
     Console.Write("Press any key to continue: ");
     Console.ReadKey(true);
 
- 
+
 }
 #endregion
 
@@ -1112,7 +1110,7 @@ void OtherWaysToCreateArrays()
 
     // guessing the type of an array by using the keyword "var"
     var numbers4 = new[] { 5, 6, 7, 8, 9 };
-    
+
 }
 ///<summary>
 /// This example calculates the max value in an array.
@@ -1158,7 +1156,7 @@ void SomeExamplesWithArrays()
         arr[index] = (index + 1) * 5;  // 5, 10, 15.. goes until the last number in array
 
     }
-  
+
     Console.WriteLine($"Array of size {arrSize} created and filled:");
 
     // Calculating the biggest number in the created array (depending on it's size which is selected by the user)
@@ -1166,7 +1164,7 @@ void SomeExamplesWithArrays()
     // e.g. 10 > int's minValue (-...) then the max value becomes 10
     int currentBiggest = int.MinValue; // we use minValue to ensure that the first number in the array will be greater than anything
 
-    for(int counter = 0; counter < arrSize; counter++)
+    for (int counter = 0; counter < arrSize; counter++)
     {
         if (arr[counter] > currentBiggest) // if an element in the array is greater than the previous one
         {
@@ -1175,10 +1173,90 @@ void SomeExamplesWithArrays()
         }
         Console.WriteLine($"Current biggest number in the array is: {currentBiggest}");
     }
-    
+
+}
+/// <summary>
+/// first, we ask the user to create an array in the range (between 2 and 6)
+/// by using do-while loop to guarantee that the question will be asked at least once.
+/// If user enters anything above or below the range, the question gets asked again until
+/// the number in the range is entered. Then, creating an array with the desired size 
+/// and start filling the array with the numbers
+/// </summary>
+void ArraysLoopsExperiment()
+{
+    Console.WriteLine("RULES:");
+    Console.WriteLine("Calculating an average value in an array...");
+    Console.WriteLine("You choose size and contents in an array you create");
+    Console.WriteLine("array's length (size) has to be between 2 and 6");
+    Console.WriteLine("-------------------------------------------------------");
+    int size = 0;
+
+    do // ensures that the question will be asked at least once
+    {
+        Console.Write("Type the desired size of an array: ");
+        string response = Console.ReadLine();
+        switch (response)
+        {
+            case "exit":
+            case "stop":
+            case "finish":
+                Console.WriteLine("The programm is stopped");
+                return; // exit the method
+
+            case " ": // if some other string gets inputted
+                Console.WriteLine("Invalid input. Restart the programm");
+                return;
+        }
+
+        size = Convert.ToInt32(response); // converting string to int
+
+    } while (size < 2 || size > 6);
+
+    // creating an array with size user selected
+    int[] array = new int[size];
+    Console.WriteLine($"An array with {size} values has been created! ");
+    Console.Write("Press anything to continue: ");
+    Console.ReadKey(true);
+
+    Console.WriteLine(); // leave some space
+
+    int value;
+
+    // used for initializing the values (user decides)
+    for (int index = 0; index < array.Length; index++)
+    {
+        Console.Write($"Initialize the int value at index [{index}]: ");
+        value = Convert.ToInt32(Console.ReadLine());
+
+        array[index] = value; // e.g. user typed 5, array[0] becomes 5 ,
+                              // on the next iteration (index 0 -> 1), the question keeps printed again and now if user
+                              // enters e.g. 67, then array[1] = 67 (value)
+                              // this continues all way to the end of an array (e.g. 4 < 5)
+
+    }
+    // used for counting values
+    for (int index = 0; index < array.Length; index++)
+    {
+        Console.WriteLine($"Index: {index}, element: {array[index]}");
+    }
+
+    // used for providing info about what number is at what index to the user
+    Console.Write("Type an index you want to see a number at: ");
+    int usersIndex = Convert.ToInt32(Console.ReadLine()); // converting string to int
+
+    // e.g. usersIndex => 3, and if it's not greater than the array's size
+    if (usersIndex >= 0 && usersIndex < array.Length)
+    {
+        // e.g. => another number = array[3] which is for example: 6, finalNumb becomes 6 
+        int finalNum = array[usersIndex];
+        Console.WriteLine(finalNum);
+
+    }
 
 
 }
+
+
 
 
 
