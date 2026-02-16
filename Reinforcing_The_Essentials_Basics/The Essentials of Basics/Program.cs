@@ -1281,7 +1281,7 @@ void CalculateAnAverageValueAndDoingTheSameWithString()
     if (choice != 1) return;  // if choice is something else than 1
 
     Console.Write("Enter the desired size of an STRING array: ");
-    int length = int.Parse(Console.ReadLine());
+    int length = Convert.ToInt32(Console.ReadLine());
 
     // creating an array with the specified length by the user
     string[] arr = new string[length];
