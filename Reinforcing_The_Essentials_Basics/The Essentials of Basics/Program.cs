@@ -45,7 +45,8 @@ MultiplicationOfChosenNumber(); */
 // Ranges();
 
 // SomeExamplesWithArrays();
-ArraysLoopsExperiment();
+// ArraysLoopsExperiment();
+CalculateAnAverageValueAndDoingTheSameWithString();
 // -------------------------------------------------------------------
 
 #region Level 3,4,6, Var
@@ -1244,7 +1245,7 @@ void ArraysLoopsExperiment()
     Console.Write("Type an index you want to see a number at: ");
     int usersIndex = Convert.ToInt32(Console.ReadLine()); // converting string to int
 
-    // e.g. usersIndex => 3, and if it's not greater than the array's size
+    // e.g. 3 => 0 (index), and if it's not greater than the array's size
     if (usersIndex >= 0 && usersIndex < array.Length)
     {
         // e.g. => another number = array[3] which is for example: 6, finalNumb becomes 6 
@@ -1256,7 +1257,80 @@ void ArraysLoopsExperiment()
 
 }
 
+void CalculateAnAverageValueAndDoingTheSameWithString()
+{
+    Console.WriteLine("1: Start the program");
+    Console.WriteLine("2: Exit");
 
+    Console.Write("Select and press a number: ");
+    int choice = Convert.ToInt32(Console.ReadLine());
+
+    // EXPERIMENT: only for educational purposes
+    // We could have written this with simle switch statement or with if-else
+    // made only for revising switch expression
+    // assigning the result of the variable choice (text) to the variable "message".
+    // "message" variable being a string can store text inside
+    string message = choice switch
+    {
+        1 => "Starting the program...",
+        2 => "Ending the program...",
+        _ => "I don't know this number. Try again later"
+    };
+    Console.WriteLine(message); // printing message only once
+
+    if (choice != 1) return;  // if choice is something else than 1
+
+    Console.Write("Enter the desired size of an STRING array: ");
+    int length = int.Parse(Console.ReadLine());
+
+    // creating an array with the specified length by the user
+    string[] arr = new string[length];
+    Console.WriteLine($"The string array with {length} values has been initialized and created!");
+    Console.WriteLine("Now, fill in the array with your own values");
+
+    // Explanation of how this loop works:
+    // 1st turn: index = 0, 0 < 5 (e.g.) --> true, entering the loop
+    // asking the question and assigning what user typed in the console to arr[0].
+    // By the end of this iteration increasing "index" by 1
+    // 2nd turn: index = 1 , still 1 < 5 --> true, entering the loop
+    // asking the question and again assigning the thing that "response" variable holds to arr[1]. --> e.g. now arr[1] = "Mete"
+    // at the end of this iteration, increasing the "index" by 1 again and it becomes 2...
+    for (int index = 0; index < arr.Length; index++)
+    {
+        Console.Write($"Initialize the string value at the index {index} : ");
+        string response = Console.ReadLine();
+
+        // filling the created array with numbers
+        arr[index] = response; // e.g. arr[0] = "Mete"
+    }
+
+    int indexCount = 0;
+    while(indexCount < arr.Length) //  displaying each element of the array in the console
+    {
+        Console.WriteLine($"Index: {indexCount}, Element: {indexCount + 1}, Value: {arr[indexCount]}");
+        indexCount++; // the same as --> indexCount = indexCount + 1
+    }
+
+    Console.Write("Press any key to continue: ");
+    Console.ReadKey(true);
+
+    // var is always like this (separate), not var[] array
+    var array = new[] { 1, 34.5, 56.6, 6 }; // syntax sugar , double array
+
+    double sum = 0;
+
+    int indeX = 0;
+    while(indeX < array.Length) // 0 < 
+    {
+        sum = sum + array[indeX]; // 0 = 0 + 1 (1st iteration)
+                                  // 1 = 1 + 34.5 (2nd interation) 
+                                  // an so on.. 
+
+        indeX = indeX + 1; // indeX++
+    }
+    double averageValue = sum / array.Length; // dividing by the total number of an array
+    Console.WriteLine($"This average value: { averageValue}");
+}
 
 
 
