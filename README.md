@@ -1,6 +1,5 @@
 
 # C# Learning Projects (Basics & OOP)
-
 ## Simple Console Apps In C# using Visual Studio
 
 ![C#](https://img.shields.io/badge/Language-C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white) 
@@ -68,9 +67,9 @@ for(int index = 0; index < arr.Length; index++)
 
 ## Here are some Screenshots of what I've done:
 
-![Arrays_Loops](PHOTOS/Arrays_Loops.png)
+![Arrays_Loops](Photos/Arrays_Loops.png)
 
-![Arrays_Loops](PHOTOS/progress_track.png)
+![Arrays_Loops](Photos/progress_track.png)
 
-![SomeScreeshot](PHOTOS/Screenshot%202026-02-06%20074514.png)
+![SomeScreeshot](Photos/Screenshot%202026-02-06%20074514.png)
 
