@@ -20,10 +20,10 @@ jobs:
         dotnet-version: 8.0.x # Version of .NET type. The same as our project files which use .NET.8 too
 
     - name: Restore Dependencies
-      run: dotnet restore Portfolio.sln  # Step 3: Downloads external libraries (NuGet packages)
+      run: dotnet restore CSharp_Basics.sln  # Step 3: Downloads external libraries (NuGet packages)
 
     - name: Build
-      run: dotnet build Portfolio.sln --no-restore # Step 4: The 'Assembly' process. If syntax is wrong -> Red Cross ❌
+      run: dotnet build CSharp_Basics.sln --no-restore # Step 4: The 'Assembly' process. If syntax is wrong -> Red Cross ❌
 
     - name: Test
       run: dotnet test --no-build --verbosity normal # Step 5: Runs automated tests (if you wrote any)
