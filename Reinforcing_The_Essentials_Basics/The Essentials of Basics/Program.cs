@@ -288,7 +288,7 @@ void OperatorsLikeSqrtAndMathF()
     int anything = Math.Max(67, 100); // prints 100
 
     // Math.Round (rounding to the nearest integer) 
-    double rounding = Math.Round(6.7); // rounds number to the nearest integer
+    double rounding = Math.Round(6.70900, 3); // rounds number to the nearest integer
     Console.WriteLine(rounding);
 
     // Expicit and Implicit conversions practice
