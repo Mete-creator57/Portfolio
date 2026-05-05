@@ -13,7 +13,7 @@ public class TheReplicator
         for (int x = 0; x < arr.Length; x++)
             {
                 Console.Write("Enter your number: ");
-                int num = int.Parse(Console.ReadLine());
+                int num = int.Parse(Console.ReadLine()!);
 
 
                 arr[x] = num;
