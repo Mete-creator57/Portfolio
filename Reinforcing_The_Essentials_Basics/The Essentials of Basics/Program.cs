@@ -1,5 +1,11 @@
 ﻿Console.Title = "All the Essentials"; // console window title
 
+// 1. Создаем объект твоего класса
+TheReplicator myGame = new TheReplicator();
+
+// 2. Запускаем метод Run()
+myGame.Run();
+
 /* ----------------------------------------------------
  * ---------------- CALLING METHODS ---------------------
 
